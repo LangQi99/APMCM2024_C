@@ -24,3 +24,19 @@ data_1.txt:
 years 2023 2022 2021 2020 2019 ....
 cat 6980 6536 5806 4862 4412 ....
 dog 5175 5119 5429 5222 5503 ....
+
+
+Question 2: Overseas pet industries, such as in European countries and America, have
+also developed rapidly in recent years. Please analyze the development of the global pet
+industry by pet type, based on the data in Attachment 2 and the additional data collected by
+your team. And make an appropriate mathematical model to forecast the global demand for pet
+food in the next three years. 
+
+问题2：近年来，海外宠物产业，如欧洲和美国，也发展迅速。请基于附件2中的数据以及您的团队收集的额外数据，
+按宠物类型分析全球宠物产业的发展。并建立适当的数学模型预测未来三年全球对宠物食品的需求。
+
+按国家权重加权平均 获得分类宠物
+食品根据宠物类型分类 加权平均（权重可以根据某种宠物 来 推测所有宠物的系数）
+（权重由前5年数据推测）因为宠物是不变的，所以权重是固定的
++中国数据（全球数据）
+
