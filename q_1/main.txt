@@ -12,6 +12,8 @@ https://www.kylc.com/stats/global/yearly_per_country/g_gdp_per_capita/chn.html
 https://www.jiemian.com/article/11967023.html
 单身人口比例
 
+若大于n次拟合，n个点必定经过，故不能用此判断方法、模型的优劣
+
 宠物行业市场规模
 
 2020年行业规模接近3000亿元
