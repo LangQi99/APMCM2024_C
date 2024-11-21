@@ -5,6 +5,7 @@ mathematical model to predict the development of China’s pet industry in the n
 
 问题1：基于附件1中的数据以及您的团队收集的额外数据，分析过去五年中国宠物产业按宠物类型的发展情况。
 并分析中国宠物产业发展的因素，建立适当的数学模型预测未来三年中国宠物产业的发展。
+ok
 
 分析影响宠物行业发展的因素，如人均收入、宠物文化的变化、宠物食品与用品的市场需求、经济政策等。
 https://www.kylc.com/stats/global/yearly_per_country/g_gdp_per_capita/chn.html
