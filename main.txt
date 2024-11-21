@@ -1,0 +1,25 @@
+Question 1: Based on the data in Attachment 1 and the additional data collected by your
+team, please analyze the development of China’s pet industry in the past five years by pet type.
+And analyze the factors in the development of China's pet industry, so as to make an appropriate
+mathematical model to predict the development of China’s pet industry in the next three years.
+
+问题1：基于附件1中的数据以及您的团队收集的额外数据，分析过去五年中国宠物产业按宠物类型的发展情况。
+并分析中国宠物产业发展的因素，建立适当的数学模型预测未来三年中国宠物产业的发展。
+
+分析影响宠物行业发展的因素，如人均收入、宠物文化的变化、宠物食品与用品的市场需求、经济政策等。
+https://www.kylc.com/stats/global/yearly_per_country/g_gdp_per_capita/chn.html
+https://www.jiemian.com/article/11967023.html
+单身人口比例
+
+宠物行业市场规模
+
+2020年行业规模接近3000亿元
+
+用python绘制图表
+
+横坐标为年份，纵坐标为宠物数量，绘制猫和狗的数量随时间的变化曲线。
+读取内容：（数据在data_1.txt中）
+data_1.txt:
+years 2023 2022 2021 2020 2019 ....
+cat 6980 6536 5806 4862 4412 ....
+dog 5175 5119 5429 5222 5503 ....
