@@ -383,7 +383,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \setcounter{secnumdepth}{3}
 % 节标题格式, 居中, 使用\chinese命令修改计数器
 \def\@seccntformat#1{\csname the#1\endcsname\ }
-\renewcommand\thesection{\chinese{section}、}
+\renewcommand\thesection{\Roman{section}、}
 \renewcommand\thesubsection{\arabic{section}\thinspace.\thinspace\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection\thinspace.\thinspace\arabic{subsubsection}}
 \renewcommand\section{\@startsection{section}{1}{\z@}%
@@ -489,18 +489,18 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 %% Initialization
  %%%数学定理相关的常量
-\newcommand*{\mcm@cap@definition}{定义}
-\newcommand*{\mcm@cap@theorem}{定理}
-\newcommand*{\mcm@cap@lemma}{引理}
-\newcommand*{\mcm@cap@corollary}{推论}
-\newcommand*{\mcm@cap@assumption}{假设}
-\newcommand*{\mcm@cap@conjecture}{猜想}
-\newcommand*{\mcm@cap@axiom}{公理}
-\newcommand*{\mcm@cap@principle}{定律}
-\newcommand*{\mcm@cap@problem}{问题}
-\newcommand*{\mcm@cap@example}{例}
-\newcommand*{\mcm@cap@proof}{证明}
-\newcommand*{\mcm@cap@solution}{解}
+\newcommand*{\mcm@cap@definition}{Definition}
+\newcommand*{\mcm@cap@theorem}{Theorem}
+\newcommand*{\mcm@cap@lemma}{Lemma}
+\newcommand*{\mcm@cap@corollary}{Corollary}
+\newcommand*{\mcm@cap@assumption}{Assumption}
+\newcommand*{\mcm@cap@conjecture}{Conjecture}
+\newcommand*{\mcm@cap@axiom}{Axiom}
+\newcommand*{\mcm@cap@principle}{Principle}
+\newcommand*{\mcm@cap@problem}{Problem}
+\newcommand*{\mcm@cap@example}{Example}
+\newcommand*{\mcm@cap@proof}{Proof}
+\newcommand*{\mcm@cap@solution}{Solution}
  %%%  中文标题名称
 % \newcommand*{\mcm@cap@contentsname}{目录}
 % \newcommand*{\mcm@cap@listfigurename}{插图清单}

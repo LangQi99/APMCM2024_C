@@ -1,4 +1,4 @@
-\contentsline {section}{\numberline {一、}Problem Restatement}{3}{section.1}%
+\contentsline {section}{\numberline {I、}Problem Restatement}{3}{section.1}%
 \contentsline {subsection}{\numberline {1\,.\,1}Question 1: Development of China's Pet Industry}{3}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1\,.\,1\,.\,1}Objective}{3}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1\,.\,1\,.\,2}Factors}{3}{subsubsection.1.1.2}%
@@ -15,13 +15,13 @@
 \contentsline {subsubsection}{\numberline {1\,.\,4\,.\,1}Objective}{4}{subsubsection.1.4.1}%
 \contentsline {subsubsection}{\numberline {1\,.\,4\,.\,2}Factors}{4}{subsubsection.1.4.2}%
 \contentsline {subsubsection}{\numberline {1\,.\,4\,.\,3}Modeling Task}{4}{subsubsection.1.4.3}%
-\contentsline {section}{\numberline {二、}Model Assumptions}{4}{section.2}%
-\contentsline {section}{\numberline {三、}符号说明}{5}{section.3}%
-\contentsline {section}{\numberline {四、}问题分析}{5}{section.4}%
-\contentsline {subsection}{\numberline {4\,.\,1}问题一分析}{5}{subsection.4.1}%
-\contentsline {section}{\numberline {五、}绘制普通三线表格}{6}{section.5}%
-\contentsline {section}{References}{6}{section*.5}%
-\contentsline {section}{Appendix \numberline {A}排队算法--matlab 源程序}{7}{appendix.a.A}%
-\contentsline {section}{Appendix \numberline {B}规划解决程序--lingo源代码}{7}{appendix.a.B}%
+\contentsline {section}{\numberline {II、}Model Assumptions}{4}{section.2}%
+\contentsline {section}{\numberline {III、}Symbol Explanation}{5}{section.3}%
+\contentsline {section}{\numberline {IV、}Analysis}{5}{section.4}%
+\contentsline {subsection}{\numberline {4\,.\,1}Question 1 Analysis}{5}{subsection.4.1}%
+\contentsline {section}{\numberline {V、}绘制普通三线表格}{7}{section.5}%
 \contentsline {section}{References}{8}{section*.7}%
+\contentsline {section}{Appendix \numberline {A}排队算法--matlab 源程序}{9}{appendix.a.A}%
+\contentsline {section}{Appendix \numberline {B}规划解决程序--lingo源代码}{9}{appendix.a.B}%
+\contentsline {section}{References}{10}{section*.9}%
 \contentsfinish 

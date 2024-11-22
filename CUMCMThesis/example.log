@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.22)  22 NOV 2024 21:10
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.22)  22 NOV 2024 22:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -900,11 +900,6 @@ Package fontspec Info: Font family 'SimHei(0)' created for font 'SimHei' with
 LaTeX Font Warning: Font shape `TU/SimHei(0)/b/n' undefined
 (Font)              using `TU/SimHei(0)/m/n' instead on input line 1.
 
-
-Overfull \hbox (2.35254pt too wide) detected at line 1
-\TU/SimHei(0)/m/n/12.045 一、|  
- []
-
 LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 1.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -914,23 +909,13 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (2.35254pt too wide) detected at line 18
-\TU/SimHei(0)/m/n/12.045 二、|  
+Overfull \hbox (4.36984pt too wide) detected at line 19
+\TU/TimesNewRoman(0)/b/n/12.045 III\TU/SimHei(0)/m/n/12.045 、|  
  []
 
 
-Overfull \hbox (2.35254pt too wide) detected at line 19
-\TU/SimHei(0)/m/n/12.045 三、|  
- []
-
-
-Overfull \hbox (2.35254pt too wide) detected at line 20
-\TU/SimHei(0)/m/n/12.045 四、|  
- []
-
-
-Overfull \hbox (2.35254pt too wide) detected at line 22
-\TU/SimHei(0)/m/n/12.045 五、|  
+Overfull \hbox (3.69348pt too wide) detected at line 20
+\TU/TimesNewRoman(0)/b/n/12.045 IV\TU/SimHei(0)/m/n/12.045 、|  
  []
 
 )
@@ -1446,48 +1431,24 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 102.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 102.
+(hyperref)                removed on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 102.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 102.
+(hyperref)                removed on input line 100.
 
-File: figures/1.png Graphic file (type bmp)
-<figures/1.png>
-
-LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 112.
-
-[5] (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2024/02/21 1.10 listings language file
-) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 )
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
@@ -1512,18 +1473,48 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
+ [5]
+File: figures/Figure_2.png Graphic file (type bmp)
+<figures/Figure_2.png>
+File: figures/1.png Graphic file (type bmp)
+<figures/1.png>
 
-Overfull \hbox (25.70299pt too wide) in paragraph at lines 148--156
+
+LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 165.
+
+[6] (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/02/21 1.10 listings language file
+) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+) [7]
+Overfull \hbox (25.70299pt too wide) in paragraph at lines 201--209
 [][]\TU/lmtt/m/n/12.05 \midrule[]\TU/SimSun(0)/m/n/12.05 和[][]\TU/lmtt/m/n/12.05 \bottomrule[]\TU/SimSun(0)/m/n/12.05 三 个 命 令 是 由 \TU/TimesNewRoman(0)/m/n/12.05 booktabs \TU/SimSun(0)/m/n/12.05 宏 包 提 供 的，|  其 中[][]\TU/lmtt/m/n/12.05 \toprule[]\TU/SimSun(0)/m/n/12.05 和[][]\TU/lmtt/m/n/12.05 \bottomrule[]\TU/SimSun(0)/m/n/12.05 分
  []
 
-[6] (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+[8] (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) (c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-) (./example.bbl [7]
+) (./example.bbl [9]
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\TU/TimesNewRoman(0)/m/n/12.05 chendongshan.  British short hair cat and golden re-
  []
@@ -1538,7 +1529,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--7
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/12.05 ,
  []
 
-) [8] (./example.aux)
+) [10] (./example.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1547,19 +1538,16 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `example.out' has not changed.
-(rerunfilecheck)             Checksum: E04F4B1FEE133ABC61DB2AC6EA477630;4417.
+(rerunfilecheck)             Checksum: D33C8B57881667DE8A0E5FE8D29965E4;4552.
  ) 
 Here is how much of TeX's memory you used:
- 22968 strings out of 474773
- 459356 string characters out of 5761288
- 1974842 words of memory out of 5000000
- 44685 multiletter control sequences out of 15000+600000
- 568122 words of font info for 134 fonts, out of 8000000 for 9000
+ 23145 strings out of 474773
+ 461092 string characters out of 5761288
+ 1973842 words of memory out of 5000000
+ 44858 multiletter control sequences out of 15000+600000
+ 568130 words of font info for 135 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 108i,10n,111p,801b,1974s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,10n,111p,801b,1988s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on example.pdf (8 pages).
+Output written on example.pdf (10 pages).

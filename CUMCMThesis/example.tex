@@ -78,32 +78,85 @@ Develop a model to assess the impact of these policies on China's pet food indus
 \section{Model Assumptions}
 
 \begin{itemize}
-\item 忽略实际加工误差对设计的影响；
-\item 木条与圆桌面之间的交接处缝隙较小，可忽略；
-\item 钢筋强度足够大，不弯曲；
-\item 假设地面平整。
+    \item Stability of human society
+    \item Exclusion of potential future policies related to pets
+    \item Ignoring changes in pet population due to major incidents
 \end{itemize}
 
-\section{符号说明}
+\section{Symbol Explanation}
 \begin{center}
 \begin{tabular}{cc}
  \hline
- \makebox[0.3\textwidth][c]{符号}	&  \makebox[0.4\textwidth][c]{意义} \\ \hline
- D	    & 木条宽度（cm） \\ \hline
- L	    & 木板长度（cm）  \\ \hline
- W	    & 木板宽度（cm）  \\ \hline
- N	    & 第n根木条  \\ \hline
- T	    & 木条根数  \\ \hline
+ \makebox[0.3\textwidth][c]{Symbol}	&  \makebox[0.4\textwidth][c]{Meaning} \\ \hline
+ $\ln$ 	    & Logarithmic Function \\ \hline
+ $\sum$ 	    & Sum  \\ \hline
+ $M$	    & Million  \\ \hline
+ $N$	    & Number  \\ \hline
 \end{tabular}
 \end{center}
 
-\section{问题分析}
+\section{Analysis}
 
-\subsection{问题一分析}
-题目要求建立模型描述折叠桌的动态变化图，由于在折叠时用力大小的不同，我们不能描述在某一时刻折叠桌的具体形态，但我们可以用每根木条的角度变化来描述折叠桌的动态变化。首先，我们知道折叠桌前后左右对称，我们可以运用几何知识求出四分之一木条的角度变化。最后，根据初始时刻和最终形态两种状态求出桌腿木条开槽的长度。
+\subsection{Question 1 Analysis}
+The task first requires us to analyze the development trends of the pet industry in China by categorizing pets 
+and identifying the factors that influence the growth of the pet industry.
+We should begin by analyzing the data.
+\par The following data is provided to us in the problem.
+\begin{table}[!htbp]
+    \caption{2019-2023 Number of Pet Cats and Dogs in China (in 10,000s)} \centering
+    \begin{tabular}{cccccc}
+    \toprule[1.5pt]
+    Pets/Years & 2023 & 2022 & 2021 & 2020 & 2019 \\
+    \midrule[1pt]
+    Cat & 6980 & 6536 & 5806 & 4862 & 4412 \\
+    Dog & 5175 & 5119 & 5429 & 5222 & 5503 \\
+    \bottomrule[1.5pt]
+    \end{tabular}
+    \end{table}
+\par Plot the trend of changes in the pet population in China. 
+A line chart is more intuitive than a table.
+Thanks to the help of python, we can easily plot the line chart by the following code.
+\begin{lstlisting}[language=python]
+import pandas as pd
+import matplotlib.pyplot as plt
+with open('data_1.txt', 'r') as file:
+    lines = file.readlines()
+years = lines[0].split()[1:]
+cat_data = lines[1].split()[1:]
+dog_data = lines[2].split()[1:]
+years = [int(year) for year in years]
+cat_data = [int(num) for num in cat_data]
+dog_data = [int(num) for num in dog_data]
+plt.figure(figsize=(10, 6))
+plt.plot(years, cat_data, marker='o', label='Cat')
+plt.plot(years, dog_data, marker='o', label='Dog')
+plt.xlabel('Year')
+plt.ylabel('Number')
+plt.title('Cat and Dog Numbers Over Years')
+plt.legend()
+plt.grid(True)
+plt.show()
+\end{lstlisting}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.6]{Figure_2}
+	\caption{Number of Cat and Dog in China from 2019 to 2023}
+\end{figure}
+\par 图像中看出，猫上升，狗数量几乎不变，猫的这种增长很有可能是由于人们生活水平的提高，越来越多的人开始养宠物。
+所以，GDP很可能是影响宠物数量的一个因素。通过查阅资料，我们发现，GDP的增长率与宠物数量的增长率有很强的相关性。
+因此，为了预测宠物数量的增长，我们可以使用GDP的增长率来预测宠物数量的增长率。
+而对于狗，我们没有找到GDP增长率与狗数量增长率的直接关系。但是我们可以肯定，宠物经济的发展会带动宠物数量的增长。
+故宠物经济很可能也与宠物数量的增长有很强的相关性。
 
 
-
+\par We aim to predict the data for the next three years based on the data from the previous five years, starting with polynomial interpolation.
+\begin{definition}[Polynomial Interpolation]
+Given \( n+1 \) points, polynomial interpolation refers to finding a polynomial such that it satisfies the condition
+\[
+    P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0
+\]
+That is, the image of the polynomial \( y = P(x) \) must pass through the given \( n+1 \) points \( (x_i, y_i) \).
+\end{definition}
 
 问题流程图：
 \begin{figure}[!h]
