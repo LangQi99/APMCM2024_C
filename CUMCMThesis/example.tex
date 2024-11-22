@@ -98,6 +98,7 @@ Develop a model to assess the impact of these policies on China's pet food indus
 \section{Analysis}
 
 \subsection{Question 1 Analysis}
+\subsubsection{Analyze factors}
 The task first requires us to analyze the development trends of the pet industry in China by categorizing pets 
 and identifying the factors that influence the growth of the pet industry.
 We should begin by analyzing the data.
@@ -148,6 +149,7 @@ Thus, to predict the growth of the pet population, we can use the growth rate of
 As for dogs, we did not find a direct relationship between the GDP growth rate and the growth rate of the dog population. However, we can be certain that the development of the pet economy will drive the growth of the pet population.
 Hence, the pet economy is likely to have a strong correlation with the growth of the pet population.
 \par Summarizing the above analysis, we assume that the growth of the pet population is influenced by the growth rate of GDP.
+\subsubsection{Polynomial Interpolation}
 \par We aim to predict the data for the next three years based on the data from the previous five years, starting with polynomial interpolation.
 \begin{definition}[Polynomial Interpolation]
 Given \( n+1 \) points, polynomial interpolation refers to finding a polynomial such that it satisfies the condition
@@ -232,6 +234,87 @@ Its essence has not changed, but the number of independent variables has increas
 	\caption{Polynomial Interpolation of Cat and Dog Numbers}
 \end{figure}
 \clearpage
+\subsubsection{Multiple Linear Regression}
+\par Similarly, in three-dimensional space, we can also find a plane that fits all the points.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.85\textwidth]{figure_4}
+	\caption{Three-Dimensional Polynomial Interpolation of Pet Economy-Year-Pets}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.85\textwidth]{figure_5}
+	\caption{Three-Dimensional Polynomial Interpolation of GDP-Year-Pets}
+\end{figure}
+\begin{definition}[Multiple Linear Regression]
+Multiple Linear Regression is a statistical method used to model the relationship between two or more independent variables and a dependent variable. Suppose we have a dataset consisting of $n$ data points, each with $m$ independent variables and one dependent variable. The goal is to find the best-fitting hyperplane that describes the relationship between the independent and dependent variables.
+\end{definition}
+
+\begin{assumption}
+Assume we have $n$ observations, each with $m$ features. Each observation can be represented as:
+\[
+\mathbf{x}_i = (x_{i1}, x_{i2}, \dots, x_{im})^T, \quad y_i
+\]
+where $y_i$ is the dependent variable for the $i$-th observation, and $\mathbf{x}_i$ is the corresponding independent variable vector. Our goal is to fit the multiple linear regression model to the following equation:
+\[
+y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_m x_{im} + \epsilon_i
+\]
+where $\beta_0$ is the intercept term, $\beta_1, \beta_2, \dots, \beta_m$ are the regression coefficients, and $\epsilon_i$ is the error term, assumed to have zero mean and constant variance.
+\end{assumption}
+
+\section{Matrix Formulation of the Model}
+Let us represent all observations in matrix form. Suppose we have $n$ data points, each with $m$ features, the data can be written as:
+\[
+\mathbf{X} = \begin{pmatrix}
+1 & x_{11} & x_{12} & \dots & x_{1m} \\
+1 & x_{21} & x_{22} & \dots & x_{2m} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_{n1} & x_{n2} & \dots & x_{nm}
+\end{pmatrix}
+\]
+\[
+\mathbf{y} = \begin{pmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{pmatrix}
+\]
+where $\mathbf{X}$ is an $n \times (m+1)$ design matrix with the first column as ones, and $\mathbf{y}$ is an $n \times 1$ vector of the dependent variables.
+
+The regression coefficients $\boldsymbol{\beta}$ are given by:
+\[
+\boldsymbol{\beta} = \begin{pmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_m
+\end{pmatrix}
+\]
+
+Thus, the regression model in matrix form is:
+\[
+\mathbf{y} = \mathbf{X} \boldsymbol{\beta} + \boldsymbol{\epsilon}
+\]
+where $\boldsymbol{\epsilon}$ is the vector of errors.
+
+\section{Least Squares Estimation}
+To estimate the regression coefficients $\boldsymbol{\beta}$, we minimize the residual sum of squares (RSS):
+\[
+RSS = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 = (\mathbf{y} - \mathbf{X} \boldsymbol{\beta})^T (\mathbf{y} - \mathbf{X} \boldsymbol{\beta})
+\]
+Taking the derivative with respect to $\boldsymbol{\beta}$ and setting it equal to zero, we obtain the normal equation:
+\[
+\mathbf{X}^T \mathbf{X} \boldsymbol{\beta} = \mathbf{X}^T \mathbf{y}
+\]
+Solving this equation gives the estimated regression coefficients:
+\[
+\boldsymbol{\beta} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}
+\]
+
+
+
+
 \bibliography{books}
 
 % \bigskip
