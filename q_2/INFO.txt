@@ -1,0 +1,20 @@
+Question 2: Overseas pet industries, such as in European countries and America, have
+also developed rapidly in recent years. Please analyze the development of the global pet
+industry by pet type, based on the data in Attachment 2 and the additional data collected by
+your team. And make an appropriate mathematical model to forecast the global demand for pet
+food in the next three years. 
+
+问题2：近年来，海外宠物产业，如欧洲和美国，也发展迅速。请基于附件2中的数据以及您的团队收集的额外数据，
+按宠物类型分析全球宠物产业的发展。并建立适当的数学模型预测未来三年全球对宠物食品的需求。
+
+按国家权重加权平均 获得分类宠物
+食品根据宠物类型分类 加权平均（权重可以根据某种宠物 来 推测所有宠物的系数）
+（权重由前5年数据推测）因为宠物是不变的，所以权重是固定的
++中国数据（全球数据）
+
+该模型十分简单，只需要带有时间的变量，但是
+1.要求时序数据是稳定的（stationary），或者是通过差分化(differencing)后是稳定的。
+2.本质上只能捕捉线性关系，而不能捕捉非线性关系。
+
+注意⚠️：采用ARIMA模型预测时序数据，必须是稳定的，如果不稳定的数据，是无法捕捉到规律的。
+比如股票数据用ARIMA无法预测的原因就是股票数据是非稳定的，常常受政策和新闻的影响而波动。
