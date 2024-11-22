@@ -16,35 +16,66 @@
 % \yearinput{2017}
 % \monthinput{08}
 % \dayinput{22}
-
+\usepackage{ctex}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{graphicx}%插入图片
+\usepackage{cite}
+\usepackage{hyperref}
 \begin{document}
-
+\bibliographystyle{plain}% 参考文献引用格式
  \maketitle
  \begin{abstract}
-    The pet industry has witnessed significant growth globally, driven by increasing disposable income and the rising popularity of pet companionship. This paper explores the development and forecasting of the pet industry using mathematical models, with a focus on China’s market trends and global demands. Through the application of ARIMA, polynomial interpolation, and multiple linear regression, this study analyzes the past five years of the pet industry in China, forecasting its development over the next three years. Additionally, global trends and the impact of economic factors, such as tariffs, on the pet food industry are considered. The results provide valuable insights for strategic recommendations and sustainable development in the pet industry.
+    The pet industry has witnessed significant growth globally, driven by increasing disposable income and the rising popularity of pet companionship. This paper explores the development and forecasting of the pet industry using mathematical models, with a focus on China's market trends and global demands. Through the application of ARIMA, polynomial interpolation, and multiple linear regression, this study analyzes the past five years of the pet industry in China, forecasting its development over the next three years. Additionally, global trends and the impact of economic factors, such as tariffs, on the pet food industry are considered. The results provide valuable insights for strategic recommendations and sustainable development in the pet industry.
+    
 % \uwave{关注我们的微信公众号}：
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=2.5]{istockphoto-992637094-612x612}
+	\caption{British short hair cat and golden retriever stock photo\cite{1}}
+\end{figure}
+% \centerline{\includegraphics[width=5cm]{gongzhonghao}}
+% \caption{this is Ali}
 
-\centerline{\includegraphics[width=5cm]{gongzhonghao}}
 \keywords{Pet Industry, Mathematical Models, ARIMA, Polynomial Interpolation, Multiple Linear Regression, Forecasting, Market Analysis, Economic Factors, Pet Food, Sustainable Development}
 \end{abstract}
 
 %目录
 \tableofcontents
 
-\section{问题重述}
+\section{Problem Restatement}
 
-创意平板折叠桌注重于表达木制品的优雅和设计师所想要强调的自动化与功能性。为了增大有效使用面积。设计师以长方形木板的宽为直径截取了一个圆形作为桌面，又将木板剩余的面积切割成了若干个长短不一的木条，每根木条的长度为平板宽到圆上一点的距离，分别用两根钢筋贯穿两侧的木条，使用者只需提起木板的两侧，便可以在重力的作用下达到自动升起的效果，相互对称的木条宛如下垂的桌布，精密的制作工艺配以质朴的木材，让这件工艺品看起来就像是工业革命时期的机器。
+This problem requires analyzing and forecasting the development trends of the pet industry in China and globally, with a focus on the pet food market. The analysis should combine historical data and additional data collected, building mathematical models for prediction. The specific tasks are as follows:
+\subsection{Question 1: Development of China's Pet Industry}
 
-\subsection{问题的提出}
-
-围绕创意平板折叠桌的动态变化过程、设计加工参数，本文依次提出如下问题：
-
-（1）给定长方形平板尺寸 （$120 cm \times 50 cm \times 3 cm$），每根木条宽度（2.5 cm），连接桌腿木条的钢筋的位置，折叠后桌子的高度（53 cm）。要求建立模型描述此折叠桌的动态变化过程，并在此基础上给出此折叠桌的设计加工参数和桌脚边缘线的数学描述。
-
-（2）......
-
-
-\section{模型的假设}
+\subsubsection{Objective}
+Analyze the development of China's pet industry over the past five years by different pet types (e.g., cats, dogs, etc.).
+\subsubsection{Factors}
+Look into economic factors, societal trends, and market changes (e.g., income growth, changes in pet ownership behavior, product innovations).
+\subsubsection{Modeling Task}
+Develop a mathematical model to predict the growth and development of China's pet industry for the next three years.
+\subsection{Question 2: Global Pet Industry Development}
+\subsubsection{Objective}
+Analyze the development of the global pet industry, focusing on different regions (e.g., Europe, America, China).
+\subsubsection{Factors}
+Global pet food demand and market characteristics by pet type.
+\subsubsection{Modeling Task}
+Create a model to forecast the global demand for pet food over the next three years, based on data provided.
+\subsection{Question 3: China's Pet Food Industry}
+\subsubsection{Objective}
+Analyze the development of China's pet food industry, specifically its production and export values.
+\subsubsection{Factors}
+The trend in China's pet food production and exports, factoring in the global demand for pet food.
+\subsubsection{Modeling Task}
+Predict China's pet food production and export trends over the next three years.
+\subsection{Question 4: Impact of Foreign Economic Policies}
+\subsubsection{Objective}
+Analyze the impact of foreign economic policies on China's pet industry, focusing on trade barriers and tariffs.
+\subsubsection{Factors}
+Quantitative modeling of the effects of changes in tariffs and other foreign policies on China's pet food industry.
+\subsubsection{Modeling Task}
+Develop a model to assess the impact of these policies on China's pet food industry and suggest strategies for sustainable development.
+\section{Model Assumptions}
 
 \begin{itemize}
 \item 忽略实际加工误差对设计的影响；
@@ -179,5 +210,5 @@ S=ss;
 D=dd(1,:);
  \end{lstlisting}
 \end{appendices}
-
+\bibliography{books}
 \end{document} 
