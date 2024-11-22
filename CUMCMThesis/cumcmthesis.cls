@@ -502,17 +502,26 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newcommand*{\mcm@cap@proof}{证明}
 \newcommand*{\mcm@cap@solution}{解}
  %%%  中文标题名称
-\newcommand*{\mcm@cap@contentsname}{目录}
-\newcommand*{\mcm@cap@listfigurename}{插图清单}
-\newcommand*{\mcm@cap@listtablename}{附表清单}
-\newcommand*{\mcm@cap@refname}{参考文献}
-\newcommand*{\mcm@cap@indexname}{索引}
-\newcommand*{\mcm@cap@figurename}{图}
-\newcommand*{\mcm@cap@tablename}{表}
-\newcommand*{\mcm@cap@appendixname}{附录}
-\newcommand*{\mcm@cap@abstractname}{摘要}
+% \newcommand*{\mcm@cap@contentsname}{目录}
+% \newcommand*{\mcm@cap@listfigurename}{插图清单}
+% \newcommand*{\mcm@cap@listtablename}{附表清单}
+% \newcommand*{\mcm@cap@refname}{参考文献}
+% \newcommand*{\mcm@cap@indexname}{索引}
+% \newcommand*{\mcm@cap@figurename}{图}
+% \newcommand*{\mcm@cap@tablename}{表}
+% \newcommand*{\mcm@cap@appendixname}{附录}
+\newcommand*{\mcm@cap@contentsname}{Contents}
+\newcommand*{\mcm@cap@listfigurename}{Figures}
+\newcommand*{\mcm@cap@listtablename}{Tables}
+\newcommand*{\mcm@cap@refname}{References}
+\newcommand*{\mcm@cap@indexname}{Index}
+\newcommand*{\mcm@cap@figurename}{Figure}
+\newcommand*{\mcm@cap@tablename}{Table}
+\newcommand*{\mcm@cap@appendixname}{Appendix}
+
+\newcommand*{\mcm@cap@abstractname}{Abstract}
  %%%  中文关键字
-\newcommand*{\mcm@cap@keywordsname}{关键字}
+\newcommand*{\mcm@cap@keywordsname}{Keywords}
 
  %%% 承诺书中的常量
 \newcommand*\mcm@commit@string@headname{赛区评阅编号（由赛区组委会填写）：}

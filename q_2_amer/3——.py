@@ -58,20 +58,22 @@ for country, file_path in countries.items():
     # 修改ARIMA模型参数
     cat_model = ARIMA(cat_data_array, order=(1, 1, 1))  # 减少差分阶数
     cat_fit = cat_model.fit()
-    # 修改预测起始点为第一年
-    cat_pred = cat_fit.get_prediction(start=0, end=len(all_years)-1)
-    cat_predicted = cat_pred.predicted_mean
-    cat_forecast = cat_predicted[len(years):]
-    cat_all_data = cat_predicted
+    # 修改预测起始点为第一个观测值
+    cat_pred = cat_fit.get_prediction(start=1, end=len(all_years)-1)
+    cat_predicted = np.concatenate(
+        ([cat_data[0]], cat_pred.predicted_mean[:len(years)-1]))
+    cat_forecast = cat_pred.predicted_mean[len(years)-1:]
+    cat_all_data = np.concatenate((cat_predicted, cat_forecast))
 
     # 对狗的数据进行预测
     dog_model = ARIMA(dog_data_array, order=(1, 1, 1))  # 减少差分阶数
     dog_fit = dog_model.fit()
-    # 同样修改狗的预测起始点为第一年
-    dog_pred = dog_fit.get_prediction(start=0, end=len(all_years)-1)
-    dog_predicted = dog_pred.predicted_mean
-    dog_forecast = dog_predicted[len(years):]
-    dog_all_data = dog_predicted
+    # 同样修改狗的预测起始点
+    dog_pred = dog_fit.get_prediction(start=1, end=len(all_years)-1)
+    dog_predicted = np.concatenate(
+        ([dog_data[0]], dog_pred.predicted_mean[:len(years)-1]))
+    dog_forecast = dog_pred.predicted_mean[len(years)-1:]
+    dog_all_data = np.concatenate((dog_predicted, dog_forecast))
 
     # 在主图(ax1)上绘制预测
     ax1.plot(all_years[:len(years)], cat_data, 'o-',
@@ -121,5 +123,5 @@ for country, file_path in countries.items():
 
     plt.tight_layout()
     plt.savefig(
-        f'q_2/pri2/{country.lower()}_pets_forecast.png', bbox_inches='tight')
+        f'q_2_amer/pri2/{country.lower()}_pets_forecast.png', bbox_inches='tight')
     plt.close()
