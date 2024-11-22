@@ -142,13 +142,12 @@ plt.show()
 	\includegraphics[scale=0.6]{Figure_2}
 	\caption{Number of Cat and Dog in China from 2019 to 2023}
 \end{figure}
-\par 图像中看出，猫上升，狗数量几乎不变，猫的这种增长很有可能是由于人们生活水平的提高，越来越多的人开始养宠物。
-所以，GDP很可能是影响宠物数量的一个因素。通过查阅资料，我们发现，GDP的增长率与宠物数量的增长率有很强的相关性。
-因此，为了预测宠物数量的增长，我们可以使用GDP的增长率来预测宠物数量的增长率。
-而对于狗，我们没有找到GDP增长率与狗数量增长率的直接关系。但是我们可以肯定，宠物经济的发展会带动宠物数量的增长。
-故宠物经济很可能也与宠物数量的增长有很强的相关性。
-
-
+\par From the graph, we can see that the number of cats is increasing, while the number of dogs remains almost unchanged. This growth in the cat population is likely due to the improvement in living standards, with more and more people beginning to keep pets.
+Therefore, GDP is likely one of the factors influencing the pet population. By reviewing relevant data, we found a strong correlation between the growth rate of GDP and the growth rate of the pet population.
+Thus, to predict the growth of the pet population, we can use the growth rate of GDP as an indicator.
+As for dogs, we did not find a direct relationship between the GDP growth rate and the growth rate of the dog population. However, we can be certain that the development of the pet economy will drive the growth of the pet population.
+Hence, the pet economy is likely to have a strong correlation with the growth of the pet population.
+\par Summarizing the above analysis, we assume that the growth of the pet population is influenced by the growth rate of GDP.
 \par We aim to predict the data for the next three years based on the data from the previous five years, starting with polynomial interpolation.
 \begin{definition}[Polynomial Interpolation]
 Given \( n+1 \) points, polynomial interpolation refers to finding a polynomial such that it satisfies the condition
@@ -157,111 +156,124 @@ Given \( n+1 \) points, polynomial interpolation refers to finding a polynomial 
 \]
 That is, the image of the polynomial \( y = P(x) \) must pass through the given \( n+1 \) points \( (x_i, y_i) \).
 \end{definition}
+\par Because \( P(x) \) can pass through these existing points and \( P(x) \) is a polynomial, \( P(x) \) may indeed reflect the trend of data changes to some extent.
+\par We tried simple polynomial interpolation, with time as the independent variable and the number of cats and dogs as the dependent variable, to perform polynomial interpolation.
+\begin{lstlisting}[language=python]
+for n in range(1, 10):
+    coeffs_cat = np.polyfit(years, cat_data, n)
+    coeffs_dog = np.polyfit(years, dog_data, n)
+    y_poly_pred_cat = np.polyval(coeffs_cat, years)
+    y_poly_pred_dog = np.polyval(coeffs_dog, years)
+    new_x = np.array([2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026])
+    new_y_cat = np.polyval(coeffs_cat, new_x)
+    new_y_dog = np.polyval(coeffs_dog, new_x)
+    plt.figure(figsize=(10, 6))
+    plt.plot(years, cat_data, marker='o', label='Cat')
+    plt.plot(years, dog_data, marker='o', label='Dog')
+\end{lstlisting}
+\par Define \( k \) as the degree of the polynomial, \( n \) as the number of points, when \( k >= n \), Function polyfit can be considered as(in fact not because of simplicity) using Lagrange interpolation to perform polynomial interpolation.
+\begin{definition}[Lagrange Interpolation]
+    Given a set of distinct nodes \( x_0, x_1, \dots, x_n \) and the corresponding function values \( y_0, y_1, \dots, y_n \), the Lagrange interpolation polynomial \( L(x) \) is the polynomial that interpolates these points, defined as:
 
-问题流程图：
-\begin{figure}[!h]
-\centering
-\includegraphics[width=.6\textwidth]{1.png}
-\caption{问题三流程图}
+    \[
+    L(x) = \sum_{i=0}^{n} y_i \ell_i(x)
+    \]
+    
+    where \( \ell_i(x) \) is the \( i \)-th Lagrange basis polynomial, defined as:
+    
+    \[
+    \ell_i(x) = \prod_{\substack{0 \leq j \leq n \\ j \neq i}} \frac{x - x_j}{x_i - x_j}
+    \]
+    
+    This polynomial satisfies: \( \ell_i(x_j) = \delta_{ij} \), where \( \delta_{ij} \) is the Kronecker delta, which is 1 when \( i = j \) and 0 otherwise.
+    
+\end{definition}
+\par The following is the result of the polynomial interpolation.
+\clearpage
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{q1_1}
+	\caption{Linear Interpolation of Cat and Dog Numbers}
 \end{figure}
-
-\section{绘制普通三线表格}
-表格应具有三线表格式，因此常用 booktabs宏包，其标准格式如表~\ref{tab001}~所示。
-\begin{table}[!htbp]
-\caption{标准三线表格}\label{tab001} \centering
-\begin{tabular}{ccccc}
-\toprule[1.5pt]
-$D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
-\midrule[1pt]
- 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
-10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
-20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
-\bottomrule[1.5pt]
-\end{tabular}
-\end{table}
-
-其绘制表格的代码及其说明如下。
-\begin{tcode}
-\begin{table}[!htbp]
-\caption[标签名]{中文标题}
-\begin{tabular}{cc...c}
-\toprule[1.5pt]
-表头第1个格   & 表头第2个格   & ... & 表头第n个格  \\
-\midrule[1pt]
-表中数据(1,1) & 表中数据(1,2) & ... & 表中数据(1,n)\\
-表中数据(2,1) & 表中数据(2,2) & ... & 表中数据(2,n)\\
-...................................................\\
-表中数据(m,1) & 表中数据(m,2) & ... & 表中数据(m,n)\\
-\bottomrule[1.5pt]
-\end{tabular}
-\end{table}
-\end{tcode}
-
-\bigskip
-table环境是一个将表格嵌入文本的浮动环境。
-tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总
-个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文本将被插入每一行
-的同一位置。表格的各行以\verb|\\|分隔，同一行的各列则以\&分隔。
-\verb|\toprule|、\verb|\midrule|和\verb|\bottomrule|三个命令是由booktabs宏包提供的，其
-中\verb|\toprule|和\verb|\bottomrule|分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，
-\verb|\midrule|用来绘制第二条（表头之下）水平线，且第一条和第三条水平线的线宽为1.5pt，第二条水平线的线宽为1pt。
-引用方法：“如表~\verb|\ref{标签名}|~所示”。
-
-
-%参考文献
-\begin{thebibliography}{9}%宽度9
- \bibitem{bib:one} ....
- \bibitem{bib:two} ....
-\end{thebibliography}
-
-\newpage
-%附录
-\begin{appendices}
-\section{排队算法--matlab 源程序}
-\begin{lstlisting}[language=matlab]
-kk=2;[mdd,ndd]=size(dd);
-while ~isempty(V)
-[tmpd,j]=min(W(i,V));tmpj=V(j);
-for k=2:ndd
-[tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
-tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
-end
-tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
-if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
-else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
-if dd(2,tmp4)==ss(tmp6,tmp4)
-ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
-else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
-end;end
-dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
-[mdd,ndd]=size(dd);kk=kk+1;
-end; S=ss; D=dd(1,:);
- \end{lstlisting}
- \section{规划解决程序--lingo源代码}
-\begin{lstlisting}[language=c]
-kk=2;
-[mdd,ndd]=size(dd);
-while ~isempty(V)
-    [tmpd,j]=min(W(i,V));tmpj=V(j);
-for k=2:ndd
-    [tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
-    tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
-end
-    tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
-if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
-else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
-if dd(2,tmp4)==ss(tmp6,tmp4)
-    ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
-else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
-end;
-end
-    dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
-    [mdd,ndd]=size(dd);
-    kk=kk+1;
-end;
-S=ss;
-D=dd(1,:);
- \end{lstlisting}
-\end{appendices}
+\par We can find that although it is linear interpolation, the fitting effect is already very good.
+However, when the degree of the polynomial is increased, the fitting effect is not significantly improved.
+And because we only have five points, when the degree of the polynomial is greater than 5, the fitting effect is actually worse.
+To solve the above problems and apply the two influencing factors mentioned earlier, we use the following model.
+Its core idea is also fitting, but it is a higher dimension fitting.
+Its essence has not changed, but the number of independent variables has increased.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{q1_all}
+	\caption{Polynomial Interpolation of Cat and Dog Numbers}
+\end{figure}
+\clearpage
 \bibliography{books}
+
+% \bigskip
+% table环境是一个将表格嵌入文本的浮动环境。
+% tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总
+% 个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文本将被插入每一行
+% 的同一位置。表格的各行以\verb|\\|分隔，同一行的各列则以\&分隔。
+% \verb|\toprule|、\verb|\midrule|和\verb|\bottomrule|三个命令是由booktabs宏包提供的，其
+% 中\verb|\toprule|和\verb|\bottomrule|分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，
+% \verb|\midrule|用来绘制第二条（表头之下）水平线，且第一条和第三条水平线的线宽为1.5pt，第二条水平线的线宽为1pt。
+% 引用方法：“如表~\verb|\ref{标签名}|~所示”。
+
+
+% %参考文献
+% \begin{thebibliography}{9}%宽度9
+%  \bibitem{bib:one} ....
+%  \bibitem{bib:two} ....
+% \end{thebibliography}
+
+% \newpage
+% %附录
+% \begin{appendices}
+% \section{排队算法--matlab 源程序}
+% \begin{lstlisting}[language=matlab]
+% kk=2;[mdd,ndd]=size(dd);
+% while ~isempty(V)
+% [tmpd,j]=min(W(i,V));tmpj=V(j);
+% for k=2:ndd
+% [tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
+% tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
+% end
+% tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
+% if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
+% else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
+% if dd(2,tmp4)==ss(tmp6,tmp4)
+% ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
+% else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
+% end;end
+% dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
+% [mdd,ndd]=size(dd);kk=kk+1;
+% end; S=ss; D=dd(1,:);
+%  \end{lstlisting}
+%  \section{规划解决程序--lingo源代码}
+% \begin{lstlisting}[language=c]
+% kk=2;
+% [mdd,ndd]=size(dd);
+% while ~isempty(V)
+%     [tmpd,j]=min(W(i,V));tmpj=V(j);
+% for k=2:ndd
+%     [tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
+%     tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
+% end
+%     tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
+% if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
+% else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
+% if dd(2,tmp4)==ss(tmp6,tmp4)
+%     ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
+% else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
+% end;
+% end
+%     dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
+%     [mdd,ndd]=size(dd);
+%     kk=kk+1;
+% end;
+% S=ss;
+% D=dd(1,:);
+%  \end{lstlisting}
+% \end{appendices}
+
 \end{document} 

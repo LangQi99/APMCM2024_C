@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 读取数据
-with open('data_1.txt', 'r') as file:
+with open('q_1/data_1.txt', 'r') as file:
     lines = file.readlines()
 
 # 解析数据
@@ -21,8 +21,13 @@ years = [int(year) for year in years]
 cat_data = [int(num) for num in cat_data]
 dog_data = [int(num) for num in dog_data]
 
-# 多项式拟合（例如：2次多项式）
-for n in range(1, 10):
+# 创建一个4x2的子图网格（而不是3x3）
+plt.figure(figsize=(10, 15))  # 调整图形大小以适应新的布局
+
+for n in range(2, 10):
+    # 在4x2网格中创建子图
+    plt.subplot(4, 2, n-1)  # 修改子图位置计算
+
     coeffs_cat = np.polyfit(years, cat_data, n)
     coeffs_dog = np.polyfit(years, dog_data, n)
 
@@ -37,44 +42,32 @@ for n in range(1, 10):
     new_y_cat = np.polyval(coeffs_cat, new_x)
     new_y_dog = np.polyval(coeffs_dog, new_x)
 
-    # 创建折线图
-    plt.figure(figsize=(10, 6))
+    # 绘制到当前子图
     plt.plot(years, cat_data, marker='o', label='Cat')
     plt.plot(years, dog_data, marker='o', label='Dog')
-    # 绘制原始数据和拟合曲线
-    # plt.scatter(years, cat_data, color='blue', label='Data points')
-    # plt.plot(years, y_poly_pred, color='green', label='Polynomial fit')
-
-    # 绘制新的预测点 - 使用虚线
     plt.plot(new_x, new_y_cat, marker='o',
              linestyle='--', label='Predicted Cat')
     plt.plot(new_x, new_y_dog, marker='o',
              linestyle='--', label='Predicted Dog')
 
-    # 添加预测值标注
+    # 添加预测值标注（字体大小调小）
     for i, (x, y) in enumerate(zip(new_x, new_y_cat)):
         plt.annotate(f'{int(y)}', (x, y), textcoords="offset points",
-                     xytext=(0, 10), ha='center')
+                     xytext=(0, 10), ha='center', fontsize=8)
 
     for i, (x, y) in enumerate(zip(new_x, new_y_dog)):
         plt.annotate(f'{int(y)}', (x, y), textcoords="offset points",
-                     xytext=(0, -15), ha='center')
+                     xytext=(0, -15), ha='center', fontsize=8)
 
-    # 设置图表属性
+    # 设置每个子图的属性
     plt.xlabel('Year')
     plt.ylabel('Number')
-    plt.title(
-        f'Predicted Cat and Dog Numbers Over Years({n} order polynomial)')
-    plt.legend()
+    plt.title(f'Order {n} polynomial')
+    plt.legend(fontsize=8)
     plt.grid(True)
-    plt.savefig(f'question1/q1_{n}.png')
-    # 设置y轴范围，比数据的最大值稍大一些
-    # y_max = max(max(cat_data), max(dog_data))
-    # plt.ylim(0, y_max * 1.2)  # 将最大值扩大20%
 
-    # 反转x轴（因为原数据年份是从大到小）
-    # plt.gca().invert_xaxis()
-
-    # 显示图表
-
-    # plt.show()
+# 调整子图之间的间距
+plt.tight_layout()
+# 保存整个图表
+plt.savefig('q_1/question1/q1_all.png')
+# plt.show()

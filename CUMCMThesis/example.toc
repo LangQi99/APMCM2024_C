@@ -1,4 +1,4 @@
-\contentsline {section}{\numberline {I、}Problem Restatement}{3}{section.1}%
+\contentsline {section}{\numberline {I、}Problem Restatement}{2}{section.1}%
 \contentsline {subsection}{\numberline {1\,.\,1}Question 1: Development of China's Pet Industry}{3}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1\,.\,1\,.\,1}Objective}{3}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1\,.\,1\,.\,2}Factors}{3}{subsubsection.1.1.2}%
@@ -7,8 +7,8 @@
 \contentsline {subsubsection}{\numberline {1\,.\,2\,.\,1}Objective}{3}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1\,.\,2\,.\,2}Factors}{3}{subsubsection.1.2.2}%
 \contentsline {subsubsection}{\numberline {1\,.\,2\,.\,3}Modeling Task}{3}{subsubsection.1.2.3}%
-\contentsline {subsection}{\numberline {1\,.\,3}Question 3: China's Pet Food Industry}{4}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1\,.\,3\,.\,1}Objective}{4}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1\,.\,3}Question 3: China's Pet Food Industry}{3}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1\,.\,3\,.\,1}Objective}{3}{subsubsection.1.3.1}%
 \contentsline {subsubsection}{\numberline {1\,.\,3\,.\,2}Factors}{4}{subsubsection.1.3.2}%
 \contentsline {subsubsection}{\numberline {1\,.\,3\,.\,3}Modeling Task}{4}{subsubsection.1.3.3}%
 \contentsline {subsection}{\numberline {1\,.\,4}Question 4: Impact of Foreign Economic Policies}{4}{subsection.1.4}%
@@ -19,9 +19,5 @@
 \contentsline {section}{\numberline {III、}Symbol Explanation}{5}{section.3}%
 \contentsline {section}{\numberline {IV、}Analysis}{5}{section.4}%
 \contentsline {subsection}{\numberline {4\,.\,1}Question 1 Analysis}{5}{subsection.4.1}%
-\contentsline {section}{\numberline {V、}绘制普通三线表格}{7}{section.5}%
-\contentsline {section}{References}{8}{section*.7}%
-\contentsline {section}{Appendix \numberline {A}排队算法--matlab 源程序}{9}{appendix.a.A}%
-\contentsline {section}{Appendix \numberline {B}规划解决程序--lingo源代码}{9}{appendix.a.B}%
-\contentsline {section}{References}{10}{section*.9}%
+\contentsline {section}{References}{10}{section*.7}%
 \contentsfinish 
