@@ -3,11 +3,12 @@
 
 % \documentclass{cumcmthesis}
 \documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
+% \documentclass{apmcmthesis}
 
 \usepackage{url}
-\title{Analysis and Forecast of the Pet Industry through Mathematical Models}
-% \tihao{A}
-% \baominghao{4321}
+\title{}
+\tihao{C}
+\baominghao{apmcm24212413}
 % \schoolname{XX大学}
 % \membera{小米}
 % \memberb{向左}
@@ -23,7 +24,15 @@
 \usepackage{cite}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
 \begin{document}
+% \pagestyle{fancy}
+% \pagestyle{frontmatterstyle}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small \team}
 \bibliographystyle{plain}% 参考文献引用格式
  \maketitle
  \begin{abstract}
@@ -39,10 +48,10 @@
 
 \keywords{Pet Industry, Mathematical Models, ARIMA, Polynomial Interpolation, Multiple Linear Regression, Forecasting, Market Analysis, Economic Factors, Pet Food, Sustainable Development}
 \end{abstract}
-
 %目录
 \tableofcontents
-
+\setcounter{page}{1}
+\rhead{\small  Page \thepage\ of 23}
 \section{Problem Restatement}
 
 This problem requires analyzing and forecasting the development trends of the pet industry in China and globally, with a focus on the pet food market. The analysis should combine historical data and additional data collected, building mathematical models for prediction. The specific tasks are as follows:

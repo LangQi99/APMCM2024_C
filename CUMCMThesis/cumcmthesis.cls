@@ -411,15 +411,24 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %% Define new environment and command
 %% 摘要两个字设置为 4 号.
 %% 定义摘要环境
+\RequirePackage{longtable,tabularx}
 \renewenvironment{abstract}{%
 \if@twocolumn
-		\section*{\abstractname}%
-	\else
-	 \begin{center}%
-	{\zihao{4}\bfseries \abstractname\vspace{-.5em}\vspace{\z@}}%
-	 \end{center}%
- 	 \quotation
-	\fi}
+      \begin{center}  \the\year\ APMCM summary sheet \end{center}%
+    \else
+	\newpage
+\begin{center}
+\begin{tabularx}{8cm}{|l|X|}
+\hline%
+Team Number:&\mcm@tokens@baominghao\\
+\hline%
+Problem Chosen:& \mcm@tokens@tihao\\
+\hline%
+\end{tabularx}
+\end{center}
+\noindent\rule{\textwidth}{2pt}
+    \begin{center}  \the\year\ APMCM summary sheet \end{center}%
+    \fi}
 	{\if@twocolumn\else\endquotation\newpage\null\fi}
 \renewenvironment{quotation}
 	{\list{}{\listparindent 2em%
@@ -484,7 +493,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	\renewcommand{\mcm@tokens@monthinput}{#1}}
 \newcommand*\dayinput[1]{%
 	\renewcommand{\mcm@tokens@dayinput}{#1}}
-
+  \newcommand*{\team}{Team \#\ \mcm@tokens@baominghao}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Initialization
