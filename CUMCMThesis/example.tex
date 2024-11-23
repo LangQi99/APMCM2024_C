@@ -426,9 +426,9 @@ we can get the predicted pet population.
         arrow/.style={->,>=stealth,thick}
     ]
         \node[box] (food) {Food Demand};
-        \node[box,right=2cm of food] (pets) {Pet Population};
-        \node[box,above right=0.8cm and 2cm of pets] (country) {Countries};
-        \node[box,below right=0.8cm and 2cm of pets] (type) {Pet Types};
+        \node[box,right=3cm of food] (pets) {Pet Population};
+        \node[box,above right=0.4cm and 3cm of pets] (country) {Countries};
+        \node[box,below right=0.4cm and 3cm of pets] (type) {Pet Types};
         
         \draw[arrow] (food) -- node[above,font=\small] {Positive Correlation} (pets);
         \draw[arrow] (pets) -- (country);
@@ -436,7 +436,11 @@ we can get the predicted pet population.
     \end{tikzpicture}
     \caption{Pet Food Demand Analysis Chain}
 \end{figure}
-To analyze the development of the global pet industry by pet type,
+\begin{assumption}
+    The demand for pet food of the same type of pet is the same in different countries.
+\end{assumption}
+ \[demands=\sum_{i=1}^{n} demand_i=\sum_{i=1}^{k} count_i \times demand_{pet_i}\]
+\par To analyze the development of the global pet industry by pet type and country,
 we first analyze the given data.
 \clearpage
 \begin{figure}[htbp]
@@ -618,7 +622,37 @@ k=2 & 12211070.97 & 7516437.89 & 19727508.86 \\
 So we get the predicted data with \(k=0\).
 Up to now, we have got the predicted data of cat and dog population in China, America, France and Germany.
 \subsubsection{Forecast food demand}
+\begin{assumption}
+    Most of the pets in the world are cats and dogs, so the demand for cat and dog food accounts for the majority of the total pet food demand.
+\end{assumption}
+\begin{assumption}
+    Pet dogs are averaged as medium-sized dogs.
+\end{assumption}
+\par The average annual food demand for a medium-sized dog is 150 kg of dog food, and the average annual food demand for a cat is 40 kg of cat food.\cite{4}
+\begin{assumption}
+    China represents the 70 \% developing countries or Asian countries, France and Germany represent 40 \% Europe.
+\end{assumption}
+ \[demands=\sum_{i=1}^{k} count_i \times demand_{pet_i}\]
+\par We can get the demand for pet food globally.
 
+\begin{table}[htbp]
+\centering
+\caption{Global Pet Food Demand Forecast}
+\begin{tabular}{cc}
+\toprule
+Year & Demand (kg) \\
+\midrule
+2024 & 3,982,670 \\
+2025 & 3,735,530 \\
+2026 & 3,995,310 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Question 3 Analysis}
+\par Note that the units are different, so we need to convert the units. First, convert USD to CNY.(Regard as 2024/11/23 because of ignoring the policy impact)
+\[1USD=7.24CNY\]
 \clearpage
 \bibliography{books}
 
@@ -627,7 +661,7 @@ Up to now, we have got the predicted data of cat and dog population in China, Am
 % \bigskip
 % table环境是一个将表格嵌入文本的浮动环境。
 % tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总
-% 个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文���将被插入每一行
+% 个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文将被插入每一行
 % 的同一位置。表格的各行以\verb|\\|分隔，同一行的各列则以\&分隔。
 % \verb|\toprule|、\verb|\midrule|和\verb|\bottomrule|三个命令是由booktabs宏包提供的，其
 % 中\verb|\toprule|和\verb|\bottomrule|分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，

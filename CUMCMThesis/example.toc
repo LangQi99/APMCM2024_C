@@ -25,5 +25,6 @@
 \contentsline {subsection}{\numberline {4\,.\,2}Question 2 Analysis}{17}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4\,.\,2\,.\,1}Forecast Population}{19}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4\,.\,2\,.\,2}Forecast food demand}{25}{subsubsection.4.2.2}%
-\contentsline {section}{References}{26}{section*.31}%
+\contentsline {subsection}{\numberline {4\,.\,3}Question 3 Analysis}{25}{subsection.4.3}%
+\contentsline {section}{References}{26}{section*.32}%
 \contentsfinish 
