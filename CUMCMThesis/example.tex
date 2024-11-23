@@ -27,8 +27,7 @@
 \bibliographystyle{plain}% 参考文献引用格式
  \maketitle
  \begin{abstract}
-    The pet industry has witnessed significant growth globally, driven by increasing disposable income and the rising popularity of pet companionship. This paper explores the development and forecasting of the pet industry using mathematical models, with a focus on China's market trends and global demands. Through the application of ARIMA, polynomial interpolation, and multiple linear regression, this study analyzes the past five years of the pet industry in China, forecasting its development over the next three years. Additionally, global trends and the impact of economic factors, such as tariffs, on the pet food industry are considered. The results provide valuable insights for strategic recommendations and sustainable development in the pet industry.
-    
+    The global pet industry is experiencing rapid expansion, primarily due to the rise in disposable income and the increasing preference for pets as companions. This paper delves into the mathematical modeling of the pet industry's growth and forecasting, with a particular emphasis on the Chinese market and international trends. Utilizing ARIMA, polynomial interpolation, and multiple linear regression, the study examines the Chinese pet industry's trajectory over the past five years and projects its future for the next three years. The research also encompasses global market trends and the influence of economic factors such as tariffs on the pet food sector. The findings offer strategic insights and guidance for sustainable growth within the pet industry.
 % \uwave{关注我们的微信公众号}：
 \begin{figure}[htbp]
 	\centering
@@ -236,7 +235,7 @@ Its essence has not changed, but the number of independent variables has increas
 	\caption{Polynomial Interpolation of Cat and Dog Numbers}
 \end{figure}
 \clearpage
-\subsubsection{Multiple Linear Regression}
+\subsubsection{Multiple Linear Regression \(&\) Logarithmic Curve Fitting}
 \par Similarly, in three-dimensional space, we can also find a plane that fits all the points.
 \begin{figure}[htbp]
 	\centering
@@ -680,7 +679,7 @@ Year & Production (CNY) & Export (CNY) \\
 \begin{definition}[impact]
     let \(J=judgment\), \(A=auxiliary\), \(\Delta J=\Delta judgment\), \(\Delta A=\Delta auxiliary\),
     \(P=production\), \(E=exports\), \(T=pets\_total\)
-    \[J = P + 5\timesE + 0.01\times T\]
+    \[J = P + 5 \times E + 0.01\times T\]
     \[A = America(T) + France(T) + Germany(T)\]
     \[\Delta J = J(year) - J(year-1)\]
     \[\Delta A = A(year) - A(year-1)\]
@@ -694,27 +693,29 @@ Year & Production (CNY) & Export (CNY) \\
 Normally, the bigger the impact, the more positive the impact is.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.99\textwidth]{Figure_22.png}
+	\includegraphics[width=.7\textwidth]{Figure_22.png}
 	\caption{judgment value}
 \end{figure}
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.99\textwidth]{Figure_21.png}
+	\includegraphics[width=.7\textwidth]{Figure_21.png}
 	\caption{auxiliary value}
 \end{figure}
+\clearpage
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.99\textwidth]{Figure_23.png}
+	\includegraphics[width=.7\textwidth]{Figure_23.png}
 	\caption{impact value}
 \end{figure}
-\clearpage
-% \par We can find that except for 2021, the development of China's pet food industry has always exceeded that of other Western countries.
-% But this does not mean that China has not been affected totally by the new economic policies of European and American countries.
-% The impact may probably be more positive in the future if the following advice is taken.
-% \begin{itemize}
-%     \item China should continue to increase the production of pet food to meet the increasing demand.
-%     \item China should also increase the export of pet food to other countries to reduce the impact of the new economic policies.
-% \end{itemize}
+
+\subsubsection{Advice}
+\par We can find that except for 2021, the development of China's pet food industry has always exceeded that of other Western countries.
+But this does not mean that China has not been affected totally by the new economic policies of European and American countries.
+The impact may probably be more positive in the future if the following advice is taken.
+\begin{itemize}
+    \item China should continue to increase the production of pet food to meet the increasing demand.
+    \item China should also increase the export of pet food to other countries to reduce the impact of the new economic policies.
+\end{itemize}
 
 \section{Conclusion}
 \par Combined all factors and data, we can conclude such information.
@@ -723,6 +724,7 @@ Normally, the bigger the impact, the more positive the impact is.
     \item The global demand for pet food will not change much.
     \item The production of pet food in China is far more than the export.
     \item The production of pet food will increase a lot while the export will not be witnessed big change.
+    \item China should continue to expand pet food production to meet the growing demand and increase exports to other countries in order to mitigate the impact of the new economic policies.
 \end{itemize}
 \clearpage
 \bibliography{books}
