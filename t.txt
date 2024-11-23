@@ -1,0 +1,53 @@
+中国的宠物食品产业将不可避免地受到欧洲国家和美国新经济政策的影响。
+请建立一个适当的数学模型定量分析这一影响。
+
+思路-影响力模型：
+
+判断量（年）=(中国生产量-中国进口量+中国宠物数量(CAT+DOG)*0.01)
+辅助量（年）=America(CAT+DOG)+France(CAT+DOG)+Germany(CAT+DOG)
+差分判断量=判断量（年）-判断量（年-1）
+差分辅助量=辅助量（年）-辅助量（年-1）
+影响=0.5*差分判断量-差分辅助量
+如果影响>0，则中国宠物食品产业将受到正面影响，反之则受到负面影响。
+
+代码：
+Task1：绘制判断量的柱状图 和 其差分的折线图 放在一个子图里
+Task2：绘制辅助量的柱状图 和 其差分的折线图 放在一个子图里
+Task3：绘制影响量的折线图
+
+数据：
+Attachment 1. 2019-2023 Number of Pet Cats and Dogs in China (in 10,000s)
+Pets/Years 2023 2022 2021 2020 2019
+Cat 6980 6536 5806 4862 4412
+Dog 5175 5119 5429 5222 5503
+
+Attachment 2. 2019-2023 Overseas Number of Pet Cats and Dogs (in 10,000s)
+Countries Pets/Years 2023 2022 2021 2020 2019
+America
+Cat 7380 7380 9420 6500 9420
+Dog 8010 8970 8970 8500 8970
+France
+Cat 1660 1490 1510 1490 1300
+Dog 990 760 750 775 740
+Germany
+Cat 1570 1520 1670 1570 1470
+Dog 1050 1060 1030 1070 1010
+
+Attachment 3.2019-2023 China’s Pet Food Production and Export Values (in 100 millions)
+Values/Years 2023 2022 2021 2020 2019
+Total Value of
+China’s Pet Food
+Production
+2793
+1508
+1554
+727
+441
+Total Value of
+China’s Pet Food
+Exports
+287
+179
+89
+71
+154

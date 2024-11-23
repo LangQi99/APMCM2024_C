@@ -633,7 +633,7 @@ Up to now, we have got the predicted data of cat and dog population in China, Am
     China represents the 70 \% developing countries or Asian countries, France and Germany represent 40 \% Europe.
 \end{assumption}
  \[demands=\sum_{i=1}^{k} count_i \times demand_{pet_i}\]
-\par We can get the demand for pet food globally.
+\par We can get the demand for pet food globally.(2019-2023 can be also calculated by the way in order to be used in the next question)
 
 \begin{table}[htbp]
 \centering
@@ -651,8 +651,79 @@ Year & Demand (kg) \\
 
 
 \subsection{Question 3 Analysis}
-\par Note that the units are different, so we need to convert the units. First, convert USD to CNY.(Regard as 2024/11/23 because of ignoring the policy impact)
+\subsubsection{Convert units}
+\par Note that the units are different, so we need to convert the units. First, convert USD to CNY.(Regard as 2024/11/23 because of ignoring the policy impact)\cite{5}
 \[1USD=7.24CNY\]
+\subsubsection{Remove 2019 data}
+\par Additionally, we removed 2019 data, because it is too old and from 2020 to 2023, the data is smoother influenced by COVID-19.
+It can better reflect the recovery process without the influence of 2019 data.
+\subsubsection{Multiple linear regression model}
+\par Using the similar method as the first question, we use the multiple linear regression model to fit the plane, and finally get the estimated value.
+\par Considering the length of the article and the process is the same, here only the results are displayed.
+\begin{table}[htbp]
+\centering
+\caption{China's Pet Food Production and Export Forecast}
+\begin{tabular}{ccc}
+\toprule
+Year & Production (CNY) & Export (CNY) \\
+\midrule
+2024 & 3532 & 347 \\
+2025 & 4029 & 372 \\
+2026 & 4818 & 421 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\subsection{Question 4 Analysis}
+\par The pet food industry in China will inevitably be affected by the new economic policies of European and American countries.
+\subsubsection{Influence model}
+\par We can use the influence model to analyze the impact of the new economic policies on the pet food industry in China.
+\begin{definition}[impact]
+    let \(J=judgment\), \(A=auxiliary\), \(\Delta J=\Delta judgment\), \(\Delta A=\Delta auxiliary\),
+    \(P=production\), \(E=exports\), \(T=pets\_total\)
+    \[J = P + 5\timesE + 0.01\times T\]
+    \[A = America(T) + France(T) + Germany(T)\]
+    \[\Delta J = J(year) - J(year-1)\]
+    \[\Delta A = A(year) - A(year-1)\]
+    \[impact = 0.5 \times \Delta J - \Delta A\]
+\end{definition}
+\par \(\Delta A\) is the change of pets economy in America, France and Germany, which can be seen as the standard of the global pet economy's change.
+\par \(\Delta J\) is the change of China's pet economy, and \(impact\) is the impact of the global pet economy on China's pet economy.
+\(\Delta J\) is a mix of the standard change (\(\Delta A\)) and the actual change (\(\Delta J\)).
+\par \(0.5\) is the weight of the change of China's pet economy and the global pet economy.
+\par If \(impact > 0\), it means that the global pet economy has a positive impact on China's pet economy, and vice versa.
+Normally, the bigger the impact, the more positive the impact is.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{Figure_22.png}
+	\caption{judgment value}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{Figure_21.png}
+	\caption{auxiliary value}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{Figure_23.png}
+	\caption{impact value}
+\end{figure}
+\clearpage
+% \par We can find that except for 2021, the development of China's pet food industry has always exceeded that of other Western countries.
+% But this does not mean that China has not been affected totally by the new economic policies of European and American countries.
+% The impact may probably be more positive in the future if the following advice is taken.
+% \begin{itemize}
+%     \item China should continue to increase the production of pet food to meet the increasing demand.
+%     \item China should also increase the export of pet food to other countries to reduce the impact of the new economic policies.
+% \end{itemize}
+
+\section{Conclusion}
+\par Combined all factors and data, we can conclude such information.
+\begin{itemize}
+    \item China's cats will increase a lot while dogs may stay nearly unchanged.
+    \item The global demand for pet food will not change much.
+    \item The production of pet food in China is far more than the export.
+    \item The production of pet food will increase a lot while the export will not be witnessed big change.
+\end{itemize}
 \clearpage
 \bibliography{books}
 
