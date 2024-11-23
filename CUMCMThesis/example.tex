@@ -415,10 +415,130 @@ we can get the predicted pet population.
     \end{tabular}
 \end{table}
 \subsection{Question 2 Analysis}
-We aim to forecast the global demand for pet food in the next three years.
+To analyze the development of the global pet industry by pet type,
+we first analyze the given data.
+\clearpage
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{all_countries_pets.png}
+	\caption{Cat and Dog Numbers Over Years by Country}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.7\textwidth]{combined_pets.png}
+	\caption{Cat and Dog Numbers Over Years by Country}
+\end{figure}
+\par We can see that the number of cats and dogs in America is much larger than that in France and Germany.
+and the number of cat and dog is almost the same.
+\par We aim to forecast the global demand for pet food in the next three years.
 Because the pet food market is closely related to the pet population, we can use the predicted pet population to forecast the demand for pet food.
+For dataset that is time series, we can use the ARIMA model to forecast the data.
+\begin{definition}[ARIMA Model]
+The ARIMA model, which stands for AutoRegressive Integrated Moving Average, is a popular method for forecasting time series data. It is particularly useful for predicting future points in a series based on its past values. The ARIMA model is defined by three parameters:
+\[
+ARIMA(p, d, q)
+\]
+where:
+\begin{itemize}
+    \item \( p \) is the order of the autoregressive (AR) part.
+    \item \( d \) is the degree of differencing required to make the time series stationary.
+    \item \( q \) is the order of the moving average (MA) part.
+\end{itemize}
 
+The AR part of the model represents a regression of the current value on its previous values. The general form for an autoregressive process of order \( p \) is:
+\[
+X_t = \phi_1 X_{t-1} + \phi_2 X_{t-2} + \cdots + \phi_p X_{t-p} + \epsilon_t
+\]
+where \( \phi_1, \phi_2, \dots, \phi_p \) are parameters, and \( \epsilon_t \) is white noise.
 
+Differencing is applied to the time series to make it stationary. If the series is not stationary, we subtract the current value from the previous value, and repeat this process \( d \) times. The differenced series is:
+\[
+\Delta^d X_t = (1 - B)^d X_t
+\]
+where \( B \) is the backshift operator, i.e., \( B^k X_t = X_{t-k} \).
+
+The MA part models the relationship between an observation and a residual error from a moving average model applied to lagged observations. A moving average process of order \( q \) is given by:
+\[
+X_t = \mu + \epsilon_t + \theta_1 \epsilon_{t-1} + \theta_2 \epsilon_{t-2} + \cdots + \theta_q \epsilon_{t-q}
+\]
+where \( \mu \) is the mean, \( \epsilon_t \) are the white noise errors, and \( \theta_1, \theta_2, \dots, \theta_q \) are the parameters.
+
+Combining all the components, the ARIMA model for a time series \( X_t \) is:
+\[
+X_t = \mu + \phi_1 X_{t-1} + \cdots + \phi_p X_{t-p} + \epsilon_t + \theta_1 \epsilon_{t-1} + \cdots + \theta_q \epsilon_{t-q}
+\]
+where \( \mu \) is the mean, and the parameters \( \phi_i \) and \( \theta_j \) need to be estimated.
+\end{definition}
+
+\begin{lstlisting}[language=python]
+# key code
+from statsmodels.tsa.arima.model import ARIMA
+cat_model = ARIMA(cat_data_array, order=(1, 1, 1))
+cat_fit = cat_model.fit()
+cat_pred = cat_fit.get_prediction(start=1, end=len(all_years)-1)
+cat_predicted = np.concatenate(
+    ([cat_data[0]], cat_pred.predicted_mean[:len(years)-1]))
+cat_forecast = cat_pred.predicted_mean[len(years)-1:]
+cat_all_data = np.concatenate((cat_predicted, cat_forecast))
+\end{lstlisting}
+
+\clearpage
+%check table
+\begin{table}[htbp]
+\small % 缩小表格字体
+\centering
+\caption{ADF and Ljung-Box Test Results}
+\begin{tabular}{llcccc}
+\toprule
+Country & Diff Order & Data Type & ADF Test & P-value & Stationarity/White Noise \\
+\midrule
+\multirow{4}{*}{America} & \multirow{4}{*}{0} & Cat(ADF) & 0.2371 & 0.7574 & Non-stationary \\
+& & Dog(ADF) & 0.6919 & 0.8653 & Non-stationary \\
+& & Cat(L-B) & 3.9598 & 0.0466 & Non-white noise \\
+& & Dog(L-B) & 0.7603 & 0.3832 & White noise \\
+\midrule
+\multirow{4}{*}{America} & \multirow{4}{*}{1} & Cat(ADF) & 0.0000 & 0.6843 & Non-stationary \\
+& & Dog(ADF) & 0.0000 & 0.6843 & Non-stationary \\
+& & Cat(L-B) & 4.0165 & 0.0451 & Non-white noise \\
+& & Dog(L-B) & 0.1711 & 0.6791 & White noise \\
+\midrule
+\multirow{3}{*}{America} & \multirow{3}{*}{2} & Cat(ADF) & -5.3474 & 0.0000 & Stationary \\
+& & Dog(ADF) & -1.0087 & 0.2846 & Non-stationary \\
+& & L-B Test & \multicolumn{3}{c}{Insufficient sample size} \\
+\midrule
+\multirow{4}{*}{France} & \multirow{4}{*}{0} & Cat(ADF) & -1.7786 & 0.0716 & Non-stationary \\
+& & Dog(ADF) & -1.4080 & 0.1483 & Non-stationary \\
+& & Cat(L-B) & 0.0000 & 1.0000 & White noise \\
+& & Dog(L-B) & 0.0281 & 0.8669 & White noise \\
+\midrule
+\multirow{4}{*}{France} & \multirow{4}{*}{1} & Cat(ADF) & 0.0000 & 0.6843 & Non-stationary \\
+& & Dog(ADF) & -0.0000 & 0.6843 & Non-stationary \\
+& & Cat(L-B) & 0.4705 & 0.4928 & White noise \\
+& & Dog(L-B) & 0.0167 & 0.8971 & White noise \\
+\midrule
+\multirow{3}{*}{France} & \multirow{3}{*}{2} & Cat(ADF) & -1.1357 & 0.2329 & Non-stationary \\
+& & Dog(ADF) & -3.0520 & 0.0023 & Stationary \\
+& & L-B Test & \multicolumn{3}{c}{Insufficient sample size} \\
+\midrule
+\multirow{4}{*}{Germany} & \multirow{4}{*}{0} & Cat(ADF) & -0.4659 & 0.5101 & Non-stationary \\
+& & Dog(ADF) & -1.1406 & 0.2311 & Non-stationary \\
+& & Cat(L-B) & 0.3825 & 0.5362 & White noise \\
+& & Dog(L-B) & 3.0780 & 0.0794 & White noise \\
+\midrule
+\multirow{4}{*}{Germany} & \multirow{4}{*}{1} & Cat(ADF) & 0.0000 & 0.6843 & Non-stationary \\
+& & Dog(ADF) & -0.0000 & 0.6843 & Non-stationary \\
+& & Cat(L-B) & 0.6246 & 0.4294 & White noise \\
+& & Dog(L-B) & 3.6171 & 0.0572 & White noise \\
+\midrule
+\multirow{3}{*}{Germany} & \multirow{3}{*}{2} & Cat(ADF) & -2.4400 & 0.0142 & Stationary \\
+& & Dog(ADF) & -18.1111 & 0.0000 & Stationary \\
+& & L-B Test & \multicolumn{3}{c}{Insufficient sample size} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\par We can find that most of them are not stationary, but due to the small amount of data, the confidence of the results is not high.
+We can still try to use the ARIMA model to predict the data.
+\clearpage
 \bibliography{books}
 
 

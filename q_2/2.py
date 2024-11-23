@@ -26,7 +26,7 @@ countries = {
 }
 
 # 创建一个大图表
-plt.figure(figsize=(12, 7))
+plt.figure(figsize=(7, 5))
 
 # 为不同国家使用不同的线型和颜色
 line_styles = {

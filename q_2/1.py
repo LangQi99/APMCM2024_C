@@ -25,20 +25,26 @@ countries = {
     'Germany': 'q_2/germany.txt'
 }
 
-# 为每个国家创建单独的图表
-for country, file_path in countries.items():
+# 创建一个包含三个子图的图表
+fig, axes = plt.subplots(1, 3, figsize=(12, 3.5))
+fig.suptitle('Cat and Dog Numbers', fontsize=16)
+
+# 为每个国家创建子图
+for i, (country, file_path) in enumerate(countries.items()):
     years, cat_data, dog_data = read_data_file(file_path)
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(years, cat_data, marker='o', label='Cat')
-    plt.plot(years, dog_data, marker='o', label='Dog')
+    axes[i].plot(years, cat_data, marker='o', label='Cat')
+    axes[i].plot(years, dog_data, marker='o', label='Dog')
 
-    plt.xlabel('Year')
-    plt.ylabel('Number')
-    plt.title(f'{country} - Cat and Dog Numbers Over Years')
-    plt.legend()
-    plt.grid(True)
+    axes[i].set_xlabel('Year')
+    axes[i].set_ylabel('Number')
+    axes[i].set_title(f'{country}')
+    axes[i].legend()
+    axes[i].grid(True)
 
-    # 保存图表到ori文件夹
-    plt.savefig(f'q_2/ori/{country.lower()}_pets.png')
-    plt.close()
+# 调整子图之间的间距
+plt.tight_layout()
+
+# 保存整个图表
+plt.savefig('q_2/ori/all_countries_pets.png')
+plt.close()

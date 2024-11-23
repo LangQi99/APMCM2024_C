@@ -1,264 +1,264 @@
 
-America 0阶差分的ADF检验结果：
-猫数据:
-ADF统计量: 0.2371
-p值: 0.7574
-临界值:
+America 0 differenced ADF test result：
+cat data:
+ADF: 0.2371
+P: 0.7574
+critical value:
 	1%: -3.7140
 	5%: -1.2480
 	10%: -0.8904
-平稳性判断: 不平稳
+stationarity test result: not stationary
 
-狗数据:
-ADF统计量: 0.6919
-p值: 0.8653
-临界值:
+dog data:
+ADF: 0.6919
+P: 0.8653
+critical value:
 	1%: -3.3514
 	5%: -1.7306
 	10%: -1.3237
-平稳性判断: 不平稳
+stationarity test result: not stationary
 
-America 0阶差分的Ljung-Box检验结果：
-猫数据:
-统计量: 3.9598
-p值: 0.0466
-白噪声判断: 非白噪声
+America 0 differenced Ljung-Box test result：
+cat data:
+value: 3.9598
+P: 0.0466
+White noise test: not white noise
 
-狗数据:
-统计量: 0.7603
-p值: 0.3832
-白噪声判断: 是白噪声
-
-==================================================
-
-America 1阶差分的ADF检验结果：
-猫数据:
-ADF统计量: -0.0000
-p值: 0.6843
-临界值:
-	1%: -4.5904
-	5%: 0.9863
-	10%: 1.0080
-平稳性判断: 不平稳
-
-狗数据:
-ADF统计量: -0.0000
-p值: 0.6843
-临界值:
-	1%: -4.5904
-	5%: 0.9863
-	10%: 1.0080
-平稳性判断: 不平稳
-
-America 1阶差分的Ljung-Box检验结果：
-猫数据:
-统计量: 4.0165
-p值: 0.0451
-白噪声判断: 非白噪声
-
-狗数据:
-统计量: 0.1711
-p值: 0.6791
-白噪声判断: 是白噪声
+dog data:
+value: 0.7603
+P: 0.3832
+White noise test: white noise
 
 ==================================================
 
-America 2阶差分的ADF检验结果：
-猫数据:
-ADF统计量: -5.3474
-p值: 0.0000
-临界值:
+America 1 differenced ADF test result：
+cat data:
+ADF: -0.0000
+P: 0.6843
+critical value:
 	1%: -4.5904
 	5%: 0.9863
 	10%: 1.0080
-平稳性判断: 平稳
+stationarity test result: not stationary
 
-狗数据:
-ADF统计量: -1.0087
-p值: 0.2846
-临界值:
+dog data:
+ADF: -0.0000
+P: 0.6843
+critical value:
 	1%: -4.5904
 	5%: 0.9863
 	10%: 1.0080
-平稳性判断: 不平稳
+stationarity test result: not stationary
 
-America 2阶差分的Ljung-Box检验结果：
-数据量不足，无法进行Ljung-Box检验
+America 1 differenced Ljung-Box test result：
+cat data:
+value: 4.0165
+P: 0.0451
+White noise test: not white noise
+
+dog data:
+value: 0.1711
+P: 0.6791
+White noise test: white noise
 
 ==================================================
 
-France 0阶差分的ADF检验结果：
-猫数据:
-ADF统计量: -1.7786
-p值: 0.0716
-临界值:
+America 2 differenced ADF test result：
+cat data:
+ADF: -5.3474
+P: 0.0000
+critical value:
+	1%: -4.5904
+	5%: 0.9863
+	10%: 1.0080
+stationarity test result: stationary
+
+dog data:
+ADF: -1.0087
+P: 0.2846
+critical value:
+	1%: -4.5904
+	5%: 0.9863
+	10%: 1.0080
+stationarity test result: not stationary
+
+America 2 differenced Ljung-Box test result：
+insufficient sample size
+
+==================================================
+
+France 0 differenced ADF test result：
+cat data:
+ADF: -1.7786
+P: 0.0716
+critical value:
 	1%: -3.3514
 	5%: -1.7306
 	10%: -1.3237
-平稳性判断: 不平稳
+stationarity test result: not stationary
 
-狗数据:
-ADF统计量: -1.4080
-p值: 0.1483
-临界值:
+dog data:
+ADF: -1.4080
+P: 0.1483
+critical value:
 	1%: -3.3514
 	5%: -1.7306
 	10%: -1.3237
-平稳性判断: 不平稳
+stationarity test result: not stationary
 
-France 0阶差分的Ljung-Box检验结果：
-猫数据:
-统计量: 0.0000
-p值: 1.0000
-白噪声判断: 是白噪声
+France 0 differenced Ljung-Box test result：
+cat data:
+value: 0.0000
+P: 1.0000
+White noise test: white noise
 
-狗数据:
-统计量: 0.0281
-p值: 0.8669
-白噪声判断: 是白噪声
-
-==================================================
-
-France 1阶差分的ADF检验结果：
-猫数据:
-ADF统计量: 0.0000
-p值: 0.6843
-临界值:
-	1%: -4.5904
-	5%: 0.9863
-	10%: 1.0080
-平稳性判断: 不平稳
-
-狗数据:
-ADF统计量: -0.0000
-p值: 0.6843
-临界值:
-	1%: -4.5904
-	5%: 0.9863
-	10%: 1.0080
-平稳性判断: 不平稳
-
-France 1阶差分的Ljung-Box检验结果：
-猫数据:
-统计量: 0.4705
-p值: 0.4928
-白噪声判断: 是白噪声
-
-狗数据:
-统计量: 0.0167
-p值: 0.8971
-白噪声判断: 是白噪声
+dog data:
+value: 0.0281
+P: 0.8669
+White noise test: white noise
 
 ==================================================
 
-France 2阶差分的ADF检验结果：
-猫数据:
-ADF统计量: -1.1357
-p值: 0.2329
-临界值:
+France 1 differenced ADF test result：
+cat data:
+ADF: 0.0000
+P: 0.6843
+critical value:
 	1%: -4.5904
 	5%: 0.9863
 	10%: 1.0080
-平稳性判断: 不平稳
+stationarity test result: not stationary
 
-狗数据:
-ADF统计量: -3.0520
-p值: 0.0023
-临界值:
+dog data:
+ADF: -0.0000
+P: 0.6843
+critical value:
 	1%: -4.5904
 	5%: 0.9863
 	10%: 1.0080
-平稳性判断: 平稳
+stationarity test result: not stationary
 
-France 2阶差分的Ljung-Box检验结果：
-数据量不足，无法进行Ljung-Box检验
+France 1 differenced Ljung-Box test result：
+cat data:
+value: 0.4705
+P: 0.4928
+White noise test: white noise
+
+dog data:
+value: 0.0167
+P: 0.8971
+White noise test: white noise
 
 ==================================================
 
-Germany 0阶差分的ADF检验结果：
-猫数据:
-ADF统计量: -0.4659
-p值: 0.5101
-临界值:
+France 2 differenced ADF test result：
+cat data:
+ADF: -1.1357
+P: 0.2329
+critical value:
+	1%: -4.5904
+	5%: 0.9863
+	10%: 1.0080
+stationarity test result: not stationary
+
+dog data:
+ADF: -3.0520
+P: 0.0023
+critical value:
+	1%: -4.5904
+	5%: 0.9863
+	10%: 1.0080
+stationarity test result: stationary
+
+France 2 differenced Ljung-Box test result：
+insufficient sample size
+
+==================================================
+
+Germany 0 differenced ADF test result：
+cat data:
+ADF: -0.4659
+P: 0.5101
+critical value:
 	1%: -3.3514
 	5%: -1.7306
 	10%: -1.3237
-平稳性判断: 不平稳
+stationarity test result: not stationary
 
-狗数据:
-ADF统计量: -1.1406
-p值: 0.2311
-临界值:
+dog data:
+ADF: -1.1406
+P: 0.2311
+critical value:
 	1%: -3.7140
 	5%: -1.2480
 	10%: -0.8904
-平稳性判断: 不平稳
+stationarity test result: not stationary
 
-Germany 0阶差分的Ljung-Box检验结果：
-猫数据:
-统计量: 0.3825
-p值: 0.5362
-白噪声判断: 是白噪声
+Germany 0 differenced Ljung-Box test result：
+cat data:
+value: 0.3825
+P: 0.5362
+White noise test: white noise
 
-狗数据:
-统计量: 3.0780
-p值: 0.0794
-白噪声判断: 是白噪声
-
-==================================================
-
-Germany 1阶差分的ADF检验结果：
-猫数据:
-ADF统计量: -0.0000
-p值: 0.6843
-临界值:
-	1%: -4.5904
-	5%: 0.9863
-	10%: 1.0080
-平稳性判断: 不平稳
-
-狗数据:
-ADF统计量: -0.0000
-p值: 0.6843
-临界值:
-	1%: -4.5904
-	5%: 0.9863
-	10%: 1.0080
-平稳性判断: 不平稳
-
-Germany 1阶差分的Ljung-Box检验结果：
-猫数据:
-统计量: 0.6246
-p值: 0.4294
-白噪声判断: 是白噪声
-
-狗数据:
-统计量: 3.6171
-p值: 0.0572
-白噪声判断: 是白噪声
+dog data:
+value: 3.0780
+P: 0.0794
+White noise test: white noise
 
 ==================================================
 
-Germany 2阶差分的ADF检验结果：
-猫数据:
-ADF统计量: -2.4400
-p值: 0.0142
-临界值:
+Germany 1 differenced ADF test result：
+cat data:
+ADF: -0.0000
+P: 0.6843
+critical value:
 	1%: -4.5904
 	5%: 0.9863
 	10%: 1.0080
-平稳性判断: 平稳
+stationarity test result: not stationary
 
-狗数据:
-ADF统计量: -18.1111
-p值: 0.0000
-临界值:
+dog data:
+ADF: -0.0000
+P: 0.6843
+critical value:
 	1%: -4.5904
 	5%: 0.9863
 	10%: 1.0080
-平稳性判断: 平稳
+stationarity test result: not stationary
 
-Germany 2阶差分的Ljung-Box检验结果：
-数据量不足，无法进行Ljung-Box检验
+Germany 1 differenced Ljung-Box test result：
+cat data:
+value: 0.6246
+P: 0.4294
+White noise test: white noise
+
+dog data:
+value: 3.6171
+P: 0.0572
+White noise test: white noise
+
+==================================================
+
+Germany 2 differenced ADF test result：
+cat data:
+ADF: -2.4400
+P: 0.0142
+critical value:
+	1%: -4.5904
+	5%: 0.9863
+	10%: 1.0080
+stationarity test result: stationary
+
+dog data:
+ADF: -18.1111
+P: 0.0000
+critical value:
+	1%: -4.5904
+	5%: 0.9863
+	10%: 1.0080
+stationarity test result: stationary
+
+Germany 2 differenced Ljung-Box test result：
+insufficient sample size
 
 ==================================================
