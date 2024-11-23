@@ -375,6 +375,7 @@ we can get the predicted pet population.
 	\caption{Predicted Pet Population in China based on GDP and Pet Industry Economy}
 \end{figure}
 \begin{table}[!htbp]
+    \small
     \caption{2019-2026 Predicted Pet Population in China (in 10000s)} \centering
     \begin{tabular}{ccccccccc}
     \toprule[1.5pt]
@@ -411,7 +412,6 @@ we can get the predicted pet population.
  \[demands=\sum_{i=1}^{n} demand_i=\sum_{i=1}^{k} count_i \times demand_{pet_i}\]
 \par To analyze the development of the global pet industry by pet type and country,
 we first analyze the given data.
-\clearpage
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.99\textwidth]{all_countries_pets.png}
@@ -478,10 +478,10 @@ cat_forecast = cat_pred.predicted_mean[len(years)-1:]
 cat_all_data = np.concatenate((cat_predicted, cat_forecast))
 \end{lstlisting}
 
-\clearpage
 %check table
 \begin{table}[htbp]
-\small % 缩小表格字体
+% \small % 缩小表格字体
+\tiny
 \centering
 \caption{ADF and Ljung-Box Test Results}
 \begin{tabular}{llcccc}
