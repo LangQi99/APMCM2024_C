@@ -20,9 +20,9 @@ def read_data(filename):
 
 
 # 读取所有数据文件
-years, data1 = read_data('data_1.txt')
-_, data2 = read_data('data_2.txt')
-_, data3 = read_data('data_3.txt')
+years, data1 = read_data('q_1_back/data_1.txt')
+_, data2 = read_data('q_1_back/data_2.txt')
+_, data3 = read_data('q_1_back/data_3.txt')
 
 # 准备数据
 plots = [
@@ -31,11 +31,13 @@ plots = [
      data1['cat'], data1['dog'], data3['pet_industry_economy'])
 ]
 
+# 创建一个包含两个子图的图形
+fig = plt.figure(figsize=(4, 15))
+
 # 分别创建两个图形
 for i, (title, x, cat, dog, y) in enumerate(plots):
-    # 创建新的图形窗口
-    fig = plt.figure(figsize=(12, 8))
-    ax = fig.add_subplot(111, projection='3d')
+    # 创建子图 - 修改为2行1列的布局
+    ax = fig.add_subplot(2, 1, i+1, projection='3d')  # 修改为2行1列
 
     # 绘制散点图和回归平面
     ax.scatter(x, y, cat, color='red', label='Cat')
@@ -87,9 +89,6 @@ for i, (title, x, cat, dog, y) in enumerate(plots):
     # 添加图例
     ax.legend()
 
-    # 调整当前图形的布局
-    plt.tight_layout()
-
     # 添加2024-2026年的预测
 
     # 预测未来的猫和狗的数量
@@ -125,6 +124,9 @@ for i, (title, x, cat, dog, y) in enumerate(plots):
         print(f"预测猫的数量: {cat_pred:.2f}")
         print(f"预测狗的数量: {dog_pred:.2f}")
         print("-" * 30)
+
+# 在所有子图绘制完成后调整整体布局
+plt.tight_layout()
 
 # 显示所有图形
 plt.show()
