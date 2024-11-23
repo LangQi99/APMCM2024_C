@@ -22,6 +22,7 @@
 \usepackage{graphicx}%插入图片
 \usepackage{cite}
 \usepackage{hyperref}
+\usepackage{tikz}
 \begin{document}
 \bibliographystyle{plain}% 参考文献引用格式
  \maketitle
@@ -98,10 +99,11 @@ Develop a model to assess the impact of these policies on China's pet food indus
 \section{Analysis}
 
 \subsection{Question 1 Analysis}
-\subsubsection{Analyze factors}
+
 The task first requires us to analyze the development trends of the pet industry in China by categorizing pets 
 and identifying the factors that influence the growth of the pet industry.
 We should begin by analyzing the data.
+\subsubsection{Analyze factors}
 \par The following data is provided to us in the problem.
 \begin{table}[!htbp]
     \caption{2019-2023 Number of Pet Cats and Dogs in China (in 10,000s)} \centering
@@ -415,6 +417,25 @@ we can get the predicted pet population.
     \end{tabular}
 \end{table}
 \subsection{Question 2 Analysis}
+\usetikzlibrary{positioning}
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        node distance=1.5cm,
+        box/.style={rectangle,draw,rounded corners,minimum width=2cm,minimum height=0.8cm},
+        arrow/.style={->,>=stealth,thick}
+    ]
+        \node[box] (food) {Food Demand};
+        \node[box,right=2cm of food] (pets) {Pet Population};
+        \node[box,above right=0.8cm and 2cm of pets] (country) {Countries};
+        \node[box,below right=0.8cm and 2cm of pets] (type) {Pet Types};
+        
+        \draw[arrow] (food) -- node[above,font=\small] {Positive Correlation} (pets);
+        \draw[arrow] (pets) -- (country);
+        \draw[arrow] (pets) -- (type);
+    \end{tikzpicture}
+    \caption{Pet Food Demand Analysis Chain}
+\end{figure}
 To analyze the development of the global pet industry by pet type,
 we first analyze the given data.
 \clearpage
@@ -433,6 +454,8 @@ and the number of cat and dog is almost the same.
 \par We aim to forecast the global demand for pet food in the next three years.
 Because the pet food market is closely related to the pet population, we can use the predicted pet population to forecast the demand for pet food.
 For dataset that is time series, we can use the ARIMA model to forecast the data.
+
+\subsubsection{Forecast Population}
 \begin{definition}[ARIMA Model]
 The ARIMA model, which stands for AutoRegressive Integrated Moving Average, is a popular method for forecasting time series data. It is particularly useful for predicting future points in a series based on its past values. The ARIMA model is defined by three parameters:
 \[
@@ -551,28 +574,30 @@ Starting with (1,1,1) for all countries, we can get the predicted data.
 	\caption{Predicted Cat and Dog Population in Germany}
 \end{figure}
 \par Beacause of the nearly stationary, France and Germany have a good fitting effect, we can use the predicted data to forecast the demand for pet food.
-However, for America, because of the non-stationary, the fitting effect is not good. 
-So we try to use the (1,k,1) model to fit the data.
+
 \clearpage
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.99\textwidth]{america_pets_forecast.png}
 	\caption{Predicted Cat and Dog Population in America (poor fitting effect)}
 \end{figure}
+\par However, for America, because of the non-stationary, the fitting effect is not good. 
+So we try to use the (1,k,1) model to fit the data.
+And calculate the MSE of the fitting effect to find the best \(k\).
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.99\textwidth]{america_pets_forecast_k0.png}
+	\includegraphics[width=.8\textwidth]{america_pets_forecast_k0.png}
 	\caption{Predicted Cat and Dog Population in America (k=0)}
 \end{figure}
 \clearpage
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.99\textwidth]{america_pets_forecast_k1.png}
+	\includegraphics[width=.8\textwidth]{america_pets_forecast_k1.png}
 	\caption{Predicted Cat and Dog Population in America (k=1)}
 \end{figure}
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.99\textwidth]{america_pets_forecast_k2.png}
+	\includegraphics[width=.8\textwidth]{america_pets_forecast_k2.png}
 	\caption{Predicted Cat and Dog Population in America (k=2)}
 \end{figure}
 \begin{table}[htbp]
@@ -590,6 +615,10 @@ k=2 & 12211070.97 & 7516437.89 & 19727508.86 \\
 \end{tabular}
 \end{table}
 \par We can see that when \(k=0\), the fitting effect is the best.
+So we get the predicted data with \(k=0\).
+Up to now, we have got the predicted data of cat and dog population in China, America, France and Germany.
+\subsubsection{Forecast food demand}
+
 \clearpage
 \bibliography{books}
 
@@ -598,7 +627,7 @@ k=2 & 12211070.97 & 7516437.89 & 19727508.86 \\
 % \bigskip
 % table环境是一个将表格嵌入文本的浮动环境。
 % tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总
-% 个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文本将被插入每一行
+% 个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文���将被插入每一行
 % 的同一位置。表格的各行以\verb|\\|分隔，同一行的各列则以\&分隔。
 % \verb|\toprule|、\verb|\midrule|和\verb|\bottomrule|三个命令是由booktabs宏包提供的，其
 % 中\verb|\toprule|和\verb|\bottomrule|分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，
