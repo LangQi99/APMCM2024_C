@@ -20,9 +20,9 @@ def read_data(filename):
 
 
 # 读取所有数据文件
-years, data1 = read_data('data_1.txt')
-_, data2 = read_data('data_2.txt')
-_, data3 = read_data('data_3.txt')
+years, data1 = read_data('q_1_back/data_1.txt')
+_, data2 = read_data('q_1_back/data_2.txt')
+_, data3 = read_data('q_1_back/data_3.txt')
 
 # 准备数据
 plots = [
@@ -31,11 +31,13 @@ plots = [
      data1['cat'], data1['dog'], data3['pet_industry_economy'])
 ]
 
+# 创建一个包含两个子图的图形
+fig = plt.figure(figsize=(10, 4))
+
 # 分别创建两个图形
 for i, (title, x, cat, dog, y) in enumerate(plots):
-    # 创建新的图形窗口
-    fig = plt.figure(figsize=(12, 8))
-    ax = fig.add_subplot(111, projection='3d')
+    # 创建子图，121表示1行2列的第i+1个位置
+    ax = fig.add_subplot(121 + i, projection='3d')
 
     # 绘制散点图和回归平面
     ax.scatter(x, y, cat, color='red', label='Cat')
@@ -78,8 +80,8 @@ for i, (title, x, cat, dog, y) in enumerate(plots):
     # 添加图例
     ax.legend()
 
-    # 调整当前图形的布局
-    plt.tight_layout()
+# 调整整体布局（移到循环外）
+plt.tight_layout()
 
 # 显示所有图形
 plt.show()

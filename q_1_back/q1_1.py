@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 读取数据
-with open('data_1.txt', 'r') as file:
+with open('q_1_back/data_1.txt', 'r') as file:
     lines = file.readlines()
 
 # 解析数据
@@ -16,7 +16,7 @@ cat_data = [int(num) for num in cat_data]
 dog_data = [int(num) for num in dog_data]
 
 # 创建折线图
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(6, 4))
 plt.plot(years, cat_data, marker='o', label='Cat')
 plt.plot(years, dog_data, marker='o', label='Dog')
 

@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 读取数据
-with open('data_2.txt', 'r') as file:
+with open('q_1_back/data_2.txt', 'r') as file:
     lines = file.readlines()
 
 # 解析数据
@@ -33,7 +33,7 @@ for n in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
     new_y = np.polyval(coeffs, new_x)
 
     # 创建折线图
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(6, 4))
     plt.plot(years, data, marker='o', label='GDP')
     # 绘制原始数据和拟合曲线
     # plt.scatter(years, cat_data, color='blue', label='Data points')
@@ -55,7 +55,7 @@ for n in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
         f'Predicted GDP Over Years({n} order polynomial)')
     plt.legend()
     plt.grid(True)
-    plt.savefig(f'question1/q2_{n}.png')
+    plt.savefig(f'q_1_back/question1_/q2_{n}_.png')
     # 设置y轴范围，比数据的最大值稍大一些
     # y_max = max(max(cat_data), max(dog_data))
     # plt.ylim(0, y_max * 1.2)  # 将最大值扩大20%
