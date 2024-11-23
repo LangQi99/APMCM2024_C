@@ -250,7 +250,7 @@ Its essence has not changed, but the number of independent variables has increas
 Multiple Linear Regression is a statistical method used to model the relationship between two or more independent variables and a dependent variable. Suppose we have a dataset consisting of $n$ data points, each with $m$ independent variables and one dependent variable. The goal is to find the best-fitting hyperplane that describes the relationship between the independent and dependent variables.
 \end{definition}
 
-\begin{assumption}
+\begin{solution}
 Assume we have $n$ observations, each with $m$ features. Each observation can be represented as:
 \[
 \mathbf{x}_i = (x_{i1}, x_{i2}, \dots, x_{im})^T, \quad y_i
@@ -260,9 +260,8 @@ where $y_i$ is the dependent variable for the $i$-th observation, and $\mathbf{x
 y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_m x_{im} + \epsilon_i
 \]
 where $\beta_0$ is the intercept term, $\beta_1, \beta_2, \dots, \beta_m$ are the regression coefficients, and $\epsilon_i$ is the error term, assumed to have zero mean and constant variance.
-\end{assumption}
 
-\section{Matrix Formulation of the Model}
+
 Let us represent all observations in matrix form. Suppose we have $n$ data points, each with $m$ features, the data can be written as:
 \[
 \mathbf{X} = \begin{pmatrix}
@@ -297,8 +296,6 @@ Thus, the regression model in matrix form is:
 \mathbf{y} = \mathbf{X} \boldsymbol{\beta} + \boldsymbol{\epsilon}
 \]
 where $\boldsymbol{\epsilon}$ is the vector of errors.
-
-\section{Least Squares Estimation}
 To estimate the regression coefficients $\boldsymbol{\beta}$, we minimize the residual sum of squares (RSS):
 \[
 RSS = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 = (\mathbf{y} - \mathbf{X} \boldsymbol{\beta})^T (\mathbf{y} - \mathbf{X} \boldsymbol{\beta})
@@ -311,11 +308,57 @@ Solving this equation gives the estimated regression coefficients:
 \[
 \boldsymbol{\beta} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}
 \]
-
-
-
-
+\end{solution}
+\begin{lstlisting}[language=python]
+# key code
+from sklearn.linear_model import LinearRegression
+regressor_cat = LinearRegression()
+regressor_cat.fit(X_cat, cat)
+x_grid, y_grid = np.meshgrid(np.linspace(x.min(), x.max(), 30),
+                                np.linspace(y.min(), y.max(), 30))
+z_pred_cat = regressor_cat.predict(np.column_stack(
+    (x_grid.ravel(), y_grid.ravel()))).reshape(x_grid.shape)
+surf_cat = ax.plot_surface(
+    x_grid, y_grid, z_pred_cat, alpha=0.3, cmap='Reds')
+\end{lstlisting}
+\par the problem is that we only have one independent variable, which is time,
+and only one dimension of data, so we can't find the corresponding points on the plane.
+we have to predict the data of GDP and pet industry economy 
+so as to find the corresponding points on the plane.
+One good way is to use the linear regression model.
+\clearpage
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.85\textwidth]{q3_1}
+	\caption{Linear Regression of Pet Industry Economy-Year-Pets}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.85\textwidth]{q2_1}
+	\caption{Linear Regression of GDP-Year-Pets}
+\end{figure}
+\par We can see that the fitting effect is very good for pet industry economy.
+But as for GDP, the fitting effect is a bit poor.It original data looks like a logarithm curve.
+Using logarithm curve to fit the data, we can get a better fitting effect.
+\begin{definition}[Logarithmic Curve Fitting]
+The logarithmic model is expressed as:
+\[
+y = \sum_{i=0}^{n} a_i [\ln(bx + c)]^i = a_0 + a_1 \ln(bx + c) + a_2 [\ln(bx + c)]^2 + \dots + a_n [\ln(bx + c)]^n
+\]
+where \(a_i\), \(b\), and \(c\) are constants, and \(x\) and \(y\) are the data points.
+\end{definition}
+\begin{solution}
+To fit the logarithmic curve, we can use the following procedure.
+let \(z = \ln(bx + c)\), then the model becomes:
+\[
+y = \sum_{i=0}^{n} a_i z^i = a_0 + a_1 z + a_2 z^2 + \dots + a_n z^n
+\]
+which is a polynomial model, we can use the polynomial regression model to fit the data.
+\end{solution}
 \bibliography{books}
+
+
+
 
 % \bigskip
 % table环境是一个将表格嵌入文本的浮动环境。
