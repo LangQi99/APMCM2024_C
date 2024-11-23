@@ -329,16 +329,16 @@ One good way is to use the linear regression model.
 \clearpage
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.85\textwidth]{q3_1}
+	\includegraphics[width=.8\textwidth]{q3_1}
 	\caption{Linear Regression of Pet Industry Economy-Year-Pets}
 \end{figure}
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.85\textwidth]{q2_1}
+	\includegraphics[width=.8\textwidth]{q2_1}
 	\caption{Linear Regression of GDP-Year-Pets}
 \end{figure}
 \par We can see that the fitting effect is very good for pet industry economy.
-But as for GDP, the fitting effect is a bit poor.It original data looks like a logarithm curve.
+But as for GDP, the fitting effect is a bit poor. It original data looks like a logarithm curve.
 Using logarithm curve to fit the data, we can get a better fitting effect.
 \begin{definition}[Logarithmic Curve Fitting]
 The logarithmic model is expressed as:
@@ -355,8 +355,71 @@ y = \sum_{i=0}^{n} a_i z^i = a_0 + a_1 z + a_2 z^2 + \dots + a_n z^n
 \]
 which is a polynomial model, we can use the polynomial regression model to fit the data.
 \end{solution}
-\bibliography{books}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{qlog_all}
+	\caption{Logarithmic Curve Fitting of GDP}
+\end{figure}
+\par We choose the 4th order polynomial to fit the data.
+The reason is that China's GDP grows faster and faster despite the overfitting.
+\par So we get predicted pet industry economy and GDP data.
 
+\begin{table}[!htbp]
+    \caption{2019-2026 Predicted Pet Industry Economy in China (in 100 million yuan)} \centering
+    \begin{tabular}{ccccccccc}
+    \toprule[1.5pt]
+    Years & 2026 & 2025 & 2024 & 2023 & 2022 & 2021 & 2020 & 2019 \\
+    \midrule[1pt]
+    Pet Industry Economy & 4181 & 3885 & 3589 & 3294 & 2998 & 2703 & 2407 & 2112 \\
+    \bottomrule[1.5pt]
+    \end{tabular}
+\end{table}
+\begin{table}[!htbp]
+    \caption{2019-2026 Predicted GDP in China (in 10 billion yuan)} \centering
+    \begin{tabular}{ccccccccc}
+    \toprule[1.5pt]
+    Years & 2026 & 2025 & 2024 & 2023 & 2022 & 2021 & 2020 & 2019 \\
+    \midrule[1pt]
+    GDP & 19190 & 15640 & 13479 & 12614 & 12662 & 12617 & 10408 & 10143 \\
+    \bottomrule[1.5pt]
+    \end{tabular}
+\end{table}
+\par applying the two factors to the multiple linear regression model,
+we can get the predicted pet population.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{Figure_11}
+	\caption{Predicted Pet Population in China based on GDP}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{Figure_12}
+	\caption{Predicted Pet Population in China based on Pet Industry Economy}
+\end{figure}
+\clearpage
+\par Combine the two factors, we use 4 dimension multiple linear regression model to fit the data.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.99\textwidth]{Figure_13}
+	\caption{Predicted Pet Population in China based on GDP and Pet Industry Economy}
+\end{figure}
+\begin{table}[!htbp]
+    \caption{2019-2026 Predicted Pet Population in China (in 10000s)} \centering
+    \begin{tabular}{ccccccccc}
+    \toprule[1.5pt]
+    Years & 2026 & 2025 & 2024 & 2023 & 2022 & 2021 & 2020 & 2019 \\
+    \midrule[1pt]
+    Cat & 9450 & 8532 & 7730 & 6980 & 6536 & 5806 & 4862 & 4412 \\
+    Dog & 5196 & 5064 & 5034 & 5175 & 5119 & 5429 & 5222 & 5503 \\
+    \bottomrule[1.5pt]
+    \end{tabular}
+\end{table}
+\subsection{Question 2 Analysis}
+We aim to forecast the global demand for pet food in the next three years.
+Because the pet food market is closely related to the pet population, we can use the predicted pet population to forecast the demand for pet food.
+
+
+\bibliography{books}
 
 
 

@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 读取数据
-with open('data_2.txt', 'r') as file:
+with open('q_1/data_2.txt', 'r') as file:
     lines = file.readlines()
 
 # 解析数据
@@ -25,10 +25,14 @@ years_log = [year - min_year + 1 for year in years]
 data_log = [d - 10000 for d in data]
 years_log = np.log(years_log)
 
+# 创建一个4x2的大图布局（而不是2x4）
+fig, axes = plt.subplots(2, 4, figsize=(15, 6))  # 调整了figsize以适应新的布局
+
 # 多项式拟合循环
-for n in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
-    # 创建子图
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+for n in [1, 2, 3, 4]:
+    # 获取当前子图位置
+    ax1 = axes[0, n-1]  # 第一列
+    ax2 = axes[1, n-1]  # 第二列
 
     # 对数变换后的拟合
     coeffs = np.polyfit(years_log, data_log, n)
@@ -43,7 +47,7 @@ for n in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
     ax1.plot(years_log, data_log, marker='o', label='Transformed GDP')
     ax1.plot(new_x_log, new_y_log, marker='o',
              linestyle='--', label='Predicted')
-    ax1.set_title(f'Log-transformed Data ({n} order polynomial)')
+    ax1.set_title(f'{n} order polynomial (Log-transformed)')
     ax1.legend()
     ax1.grid(True)
 
@@ -61,12 +65,12 @@ for n in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
         ax2.annotate(f'{int(y)}', (x, y), textcoords="offset points",
                      xytext=(0, 10), ha='center')
 
-    ax2.set_title(f'Original Data Space ({n} order polynomial)')
+    ax2.set_title(f'{n} order polynomial (Original)')
     ax2.set_xlabel('Year')
     ax2.set_ylabel('Number')
     ax2.legend()
     ax2.grid(True)
 
-    plt.tight_layout()
-    plt.savefig(f'question1/qlog_{n}.png')
-    plt.close()
+plt.tight_layout()
+plt.savefig('q_1/question1/qlog_all.png')
+plt.close()

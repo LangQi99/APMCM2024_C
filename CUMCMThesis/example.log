@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.22)  23 NOV 2024 10:01
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.22)  23 NOV 2024 11:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1606,7 +1606,36 @@ File: figures/q2_1.png Graphic file (type bmp)
 <figures/q2_1.png>
  [14
 
-] (./example.bbl
+]
+File: figures/qlog_all.png Graphic file (type bmp)
+<figures/qlog_all.png>
+File: figures/Figure_11.png Graphic file (type bmp)
+<figures/Figure_11.png>
+File: figures/Figure_12.png Graphic file (type bmp)
+<figures/Figure_12.png>
+ [15] [16]
+File: figures/Figure_13.png Graphic file (type bmp)
+<figures/Figure_13.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 417.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 417.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 417.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 417.
+
+(./example.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\TU/TimesNewRoman(0)/m/n/12.05 chendongshan.  British short hair cat and golden re-
  []
@@ -1621,7 +1650,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--7
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/12.05 ,
  []
 
-) [15] (./example.aux)
+[17
+
+]) [18] (./example.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1630,16 +1661,22 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `example.out' has not changed.
-(rerunfilecheck)             Checksum: E6556FFD16C7199F25AAD7CD628C7C9F;4547.
+
+Package rerunfilecheck Warning: File `example.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `example.out':
+(rerunfilecheck)             Before: BC6C6F5F9AF6D2DC33B335834D7363F3;4730
+(rerunfilecheck)             After:  E7D6F180DC2FAE23A11209003F38ED50;4728.
  ) 
 Here is how much of TeX's memory you used:
- 21536 strings out of 474773
- 435028 string characters out of 5761288
- 1958842 words of memory out of 5000000
- 43280 multiletter control sequences out of 15000+600000
+ 21605 strings out of 474773
+ 436580 string characters out of 5761288
+ 1957842 words of memory out of 5000000
+ 43349 multiletter control sequences out of 15000+600000
  568114 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  108i,9n,111p,801b,1988s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on example.pdf (15 pages).
+Output written on example.pdf (18 pages).
