@@ -40,7 +40,7 @@ for country, file_path in countries.items():
     # 枚举不同的差分次数
     for k in range(3):  # k = 0, 1, 2
         # 创建一个2x3的图表布局
-        fig = plt.figure(figsize=(18, 10))
+        fig = plt.figure(figsize=(12, 7))
 
         # 主预测图
         ax1 = plt.subplot2grid((2, 3), (0, 0), colspan=2)

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.22)  23 NOV 2024 12:30
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.11.22)  23 NOV 2024 15:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1646,7 +1646,28 @@ File: figures/combined_pets.png Graphic file (type bmp)
 
 ] [19] [20
 
-] (./example.bbl
+]
+File: figures/france_pets_forecast.png Graphic file (type bmp)
+<figures/france_pets_forecast.png>
+File: figures/germany_pets_forecast.png Graphic file (type bmp)
+<figures/germany_pets_forecast.png>
+ [21
+
+]
+File: figures/america_pets_forecast.png Graphic file (type bmp)
+<figures/america_pets_forecast.png>
+File: figures/america_pets_forecast_k0.png Graphic file (type bmp)
+<figures/america_pets_forecast_k0.png>
+ [22
+
+]
+File: figures/america_pets_forecast_k1.png Graphic file (type bmp)
+<figures/america_pets_forecast_k1.png>
+File: figures/america_pets_forecast_k2.png Graphic file (type bmp)
+<figures/america_pets_forecast_k2.png>
+ [23
+
+] [24] (./example.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\TU/TimesNewRoman(0)/m/n/12.05 chendongshan.  British short hair cat and golden re-
  []
@@ -1661,7 +1682,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--7
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/12.05 ,
  []
 
-) [21
+) [25
 
 ] (./example.aux)
  ***********
@@ -1673,15 +1694,15 @@ L3 programming layer <2022/08/05>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `example.out' has not changed.
-(rerunfilecheck)             Checksum: 61D7C1C175FC7CB4D4401C6918BF588B;4728.
+(rerunfilecheck)             Checksum: 14E888F6E3628DC8B3A448C293693668;4728.
  ) 
 Here is how much of TeX's memory you used:
- 21689 strings out of 474773
- 438381 string characters out of 5761288
+ 21755 strings out of 474773
+ 440863 string characters out of 5761288
  1958842 words of memory out of 5000000
- 43416 multiletter control sequences out of 15000+600000
+ 43476 multiletter control sequences out of 15000+600000
  574660 words of font info for 162 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  108i,10n,111p,801b,1988s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on example.pdf (21 pages).
+Output written on example.pdf (25 pages).

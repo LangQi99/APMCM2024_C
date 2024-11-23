@@ -7,8 +7,6 @@
 猫模型MSE: 685887.84
 狗模型MSE: 264694.30
 总体MSE: 950582.15
-C:\Users\LangQi-Pro\AppData\Local\Programs\Python\Python310\lib\site-packages\statsmodels\tsa\statespace\sarimax.py:866: UserWarning: Too few observations to estimate starting parameters for ARMA and trend. All parameters except for variances will be set to zeros.
-  warn('Too few observations to estimate starting parameters%s.'
 
 差分阶数 k=2 的评估结果：
 猫模型MSE: 12211070.97
