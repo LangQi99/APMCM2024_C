@@ -24,11 +24,11 @@
 \contentsline {subsubsection}{\numberline {4\,.\,2\,.\,2}Forecast food demand}{19}{subsubsection.4.2.2}%
 \contentsline {subsection}{\numberline {4\,.\,3}Question 3 Analysis}{19}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4\,.\,3\,.\,1}Convert units}{19}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4\,.\,3\,.\,2}Remove 2019 data}{19}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4\,.\,3\,.\,2}Remove 2019 data}{20}{subsubsection.4.3.2}%
 \contentsline {subsubsection}{\numberline {4\,.\,3\,.\,3}Multiple linear regression model}{20}{subsubsection.4.3.3}%
-\contentsline {subsection}{\numberline {4\,.\,4}Question 4 Analysis}{20}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4\,.\,4\,.\,1}Influence model}{20}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4\,.\,4\,.\,2}Advice}{22}{subsubsection.4.4.2}%
-\contentsline {section}{\numberline {V、}Conclusion}{22}{section.5}%
-\contentsline {section}{References}{23}{section*.32}%
+\contentsline {subsection}{\numberline {4\,.\,4}Question 4 Analysis}{21}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4\,.\,4\,.\,1}Influence model}{21}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4\,.\,4\,.\,2}Advice}{23}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {V、}Conclusion}{23}{section.5}%
+\contentsline {section}{References}{24}{section*.33}%
 \contentsfinish 

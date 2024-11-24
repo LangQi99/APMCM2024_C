@@ -20,15 +20,13 @@ def read_data(filename):
 
 
 # 读取所有数据文件
-years, data1 = read_data('q_1_back/data_1.txt')
-_, data2 = read_data('q_1_back/data_2.txt')
-_, data3 = read_data('q_1_back/data_3.txt')
+years, data1 = read_data('q_1_back/data4.txt')
+_, data2 = read_data('q_1_back/data5.txt')
 
 # 准备数据
 plots = [
-    ('Production-Year-Pets', years, data1['cat'], data1['dog'], data2['GDP']),
-    ('Export-Year-Pets', years,
-     data1['cat'], data1['dog'], data3['pet_industry_economy'])
+    ('Predicted Production and Exports', years,
+     data1['Production'], data1['Exports'], data2['demand']),
 ]
 
 # 分别创建两个图形
@@ -37,8 +35,8 @@ for i, (title, x, cat, dog, y) in enumerate(plots):
     ax = fig.add_subplot(111, projection='3d')  # 创建3D子图
 
     # 绘制散点图和回归平面
-    ax.scatter(x, y, cat, color='red', label='Cat')
-    ax.scatter(x, y, dog, color='blue', label='Dog')
+    ax.scatter(x, y, cat, color='red', label='Production')
+    ax.scatter(x, y, dog, color='blue', label='Exports')
 
     # 准备回归数据（分别为猫和狗）
     X_cat = np.column_stack((x, y))
@@ -55,10 +53,7 @@ for i, (title, x, cat, dog, y) in enumerate(plots):
 
     # 准备未来年份的预测数据
     # future_y = np.interp(future_years, x, y)  # 对GDP/宠物经济进行插值
-    if 'GDP' in title:
-        future_y = np.array([13479, 15640, 19190])
-    else:
-        future_y = np.array([3589, 3885, 4181])
+    future_y = np.array([3982670, 3735530, 3995310])
     future_X = np.column_stack((future_years, future_y))
     x_grid, y_grid = np.meshgrid(np.linspace(x.min(), max(future_years), 30),
                                  np.linspace(y.min(), max(future_y), 30))
@@ -77,8 +72,8 @@ for i, (title, x, cat, dog, y) in enumerate(plots):
 
     # 设置标签
     ax.set_xlabel('Year')
-    ax.set_ylabel('GDP' if 'GDP' in title else 'Pet Economy')
-    ax.set_zlabel('Number')
+    ax.set_ylabel('demand')
+    ax.set_zlabel('Exports and Production')
 
     # 设置标题
     ax.set_title(title)
@@ -97,20 +92,20 @@ for i, (title, x, cat, dog, y) in enumerate(plots):
         # 添加猫的预测点和标注
         ax.scatter(year, y_val, cat_pred, color='darkred', marker='*', s=100)
         ax.text(year, y_val, cat_pred,
-                f'Year: {year}\nCat: {cat_pred:.0f}',
+                f'Year: {year}\nProduction: {cat_pred:.0f}',
                 color='darkred', fontsize=8)
 
         # 添加狗的预测点和标注
         ax.scatter(year, y_val, dog_pred, color='darkblue', marker='*', s=100)
         ax.text(year, y_val, dog_pred,
-                f'Year: {year}\nDog: {dog_pred:.0f}',
+                f'Year: {year}\nExports: {dog_pred:.0f}',
                 color='darkblue', fontsize=8)
 
     # 添加图例
     ax.scatter([], [], color='darkred', marker='*',
-               s=100, label='Predicted Cat')
+               s=100, label='Predicted Production')
     ax.scatter([], [], color='darkblue', marker='*',
-               s=100, label='Predicted Dog')
+               s=100, label='Predicted Exports')
     ax.legend()
 
     # 打印预测结果
