@@ -10,7 +10,8 @@ EUROPE_RATIO = 0.4  # 法国和德国代表欧洲的40%
 
 def calculate_global_demand(data):
     # 初始化结果字典，按年份存储
-    yearly_demands = {2024: 0, 2025: 0, 2026: 0}
+    yearly_demands = {2019: 0, 2020: 0, 2021: 0,
+                      2022: 0, 2023: 0, 2024: 0, 2025: 0, 2026: 0}
 
     current_country = None
     for line in data.strip().split('\n'):
@@ -43,30 +44,30 @@ def calculate_global_demand(data):
             regional_multiplier = 1
 
         # 更新每年的需求量
-        for year, number in zip([2024, 2025, 2026], numbers):
+        for year, number in zip([2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026], numbers):
             yearly_demands[year] += number * multiplier * regional_multiplier
 
     return yearly_demands
 
 
 # 使用示例
-data = """year 2024 2025 2026
+data = """year 2019 2020 2021 2022 2023 2024 2025 2026
 
 france
-cat 1751 1734 1738
-dog 1079 1044 1058
+cat 1300 1490 1510 1490 1660 1751 1734 1738
+dog 740 775 750 760 990 1079 1044 1058
 
 germany
-cat 1588 1557 1557
-dog 1053 1050 1052
+cat 1470 1570 1670 1520 1570 1588 1557 1557
+dog 1010 1070 1030 1060 1050 1053 1050 1052
 
 america
-cat 9138 6920 9029
-dog 9463 8290 9040
+cat 9420 6500 9420 7380 7380 9138 6920 9029
+dog 8970 8500 9870 9870 8010 9463 8290 9040
 
 china
-cat 7730 8532 9450
-dog 5034 5064 5196"""
+cat 4412 4862 5806 6536 6980 7730 8532 9450
+dog 5503 5222 5429 5119 5175 5034 5064 5196"""
 
 demands = calculate_global_demand(data)
 for year, demand in demands.items():

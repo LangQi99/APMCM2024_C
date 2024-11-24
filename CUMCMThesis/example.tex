@@ -620,6 +620,11 @@ Up to now, we have got the predicted data of cat and dog population in China, Am
 \toprule
 Year & Demand (kg) \\
 \midrule
+2019 & 3,657,480 \\
+2020 & 3,510,655 \\
+2021 & 3,889,390 \\
+2022 & 3,788,490 \\
+2023 & 3,640,150 \\
 2024 & 3,982,670 \\
 2025 & 3,735,530 \\
 2026 & 3,995,310 \\
@@ -656,19 +661,19 @@ Year & Production (CNY) & Export (CNY) \\
 \subsubsection{Influence model}
 \par We can use the influence model to analyze the impact of the new economic policies on the pet food industry in China.
 \begin{definition}[impact]
-    let \(J=judgment\), \(A=auxiliary\), \(\Delta J=\Delta judgment\), \(\Delta A=\Delta auxiliary\),
+    let \(I=impact\), \(J=judgment\), \(A=auxiliary\), \(\Delta J=\Delta judgment\), \(\Delta A=\Delta auxiliary\),
     \(P=production\), \(E=exports\), \(T=pets\_total\)
     \[J = P + 5 \times E + 0.01\times T\]
     \[A = America(T) + France(T) + Germany(T)\]
     \[\Delta J = J(year) - J(year-1)\]
     \[\Delta A = A(year) - A(year-1)\]
-    \[impact = 0.5 \times \Delta J - \Delta A\]
+    \[I = 0.5 \times \Delta J - \Delta A\]
 \end{definition}
 \par \(\Delta A\) is the change of pets economy in America, France and Germany, which can be seen as the standard of the global pet economy's change.
 \par \(\Delta J\) is the change of China's pet economy, and \(impact\) is the impact of the global pet economy on China's pet economy.
 \(\Delta J\) is a mix of the standard change (\(\Delta A\)) and the actual change (\(\Delta J\)).
 \par \(0.5\) is the weight of the change of China's pet economy and the global pet economy.
-\par If \(impact > 0\), it means that the global pet economy has a positive impact on China's pet economy, and vice versa.
+\par If \(I > 0\), it means that the global pet economy has a positive impact on China's pet economy, and vice versa.
 Normally, the bigger the impact, the more positive the impact is.
 \begin{figure}[htbp]
 	\centering

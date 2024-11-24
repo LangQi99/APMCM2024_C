@@ -26,18 +26,15 @@ _, data3 = read_data('q_1_back/data_3.txt')
 
 # 准备数据
 plots = [
-    ('GDP-Year-Pets', years, data1['cat'], data1['dog'], data2['GDP']),
-    ('Pet Economy-Year-Pets', years,
+    ('Production-Year-Pets', years, data1['cat'], data1['dog'], data2['GDP']),
+    ('Export-Year-Pets', years,
      data1['cat'], data1['dog'], data3['pet_industry_economy'])
 ]
 
-# 创建一个包含两个子图的图形
-fig = plt.figure(figsize=(4, 15))
-
 # 分别创建两个图形
 for i, (title, x, cat, dog, y) in enumerate(plots):
-    # 创建子图 - 修改为2行1列的布局
-    ax = fig.add_subplot(2, 1, i+1, projection='3d')  # 修改为2行1列
+    fig = plt.figure(figsize=(8, 8))  # 为每个图形创建新的fig
+    ax = fig.add_subplot(111, projection='3d')  # 创建3D子图
 
     # 绘制散点图和回归平面
     ax.scatter(x, y, cat, color='red', label='Cat')
@@ -125,8 +122,8 @@ for i, (title, x, cat, dog, y) in enumerate(plots):
         print(f"预测狗的数量: {dog_pred:.2f}")
         print("-" * 30)
 
-# 在所有子图绘制完成后调整整体布局
-plt.tight_layout()
+    # 在所有子图绘制完成后调整整体布局
+    plt.tight_layout()
 
-# 显示所有图形
-plt.show()
+    # 显示当前图形
+    plt.show()  # 在每个图形后显示
